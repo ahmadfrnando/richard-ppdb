@@ -14,18 +14,18 @@
       <div class="col-12 col-lg-9 px-0 px-md-3 mb-4">
         <div class="mb-md-3 px-3 px-md-5 py-4 py-md-5 bg-success shadow-sm">
           <h4 class="text-white mb-0">Profile Sekolah</h4>
-          <h4 class="text-white">SMK Muhammadiyah 1 Sukoharjo</h4>
+          <h4 class="text-white">SMK SWASTA KATOLIK MARIANA</h4>
           <h6 class="text-white font-weight-normal">TAHUN PELAJARAN 2022/2023</h6>
         </div>
         <div class="mb-3 px-3 px-md-5 py-4 py-md-5 bg-light shadow-sm">
           <div class="mb-4">
             <div class="d-flex align-items-center pb-3">
               <span class="bg-primary mb-2 rounded-pill" style="height: 0.4rem; width: 1.6rem;"></span>
-              <h5 class="ml-3">SMK Muhammadiyah 1 Sukoharjo</h5>
+              <h5 class="ml-3">SMK SWASTA KATOLIK MARIANA</h5>
             </div>
             <div class="">
               <div class="mb-4 d-flex justify-content-center">
-                <img src="{{ asset('images/logo-sekolah.png') }}" height="180" alt="Logo SMK Muhammadiyah 1 Sukoharjo">
+                <img src="{{ asset('images/logo-sekolah.png') }}" height="180" alt="Logo SMK SWASTA KATOLIK MARIANA">
               </div>
               <div class="mb-4">
                 <h6># Visi</h6>

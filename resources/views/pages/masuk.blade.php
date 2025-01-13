@@ -17,8 +17,8 @@
       <div class="col-12 col-lg-9 px-0 px-md-3 mb-4">
         <div class="mb-md-3 px-3 px-md-5 py-4 py-md-5 bg-primary shadow-sm">
           <h4 class="text-white mb-0">Masuk Akun PPDB</h4>
-          <h4 class="text-white">SMK Muhammadiyah 1 Sukoharjo</h4>
-          <h6 class="text-white font-weight-normal">TAHUN PELAJARAN 2022/2023</h6>
+          <h4 class="text-white">SMK SWASTA KATOLIK MARIANA</h4>
+          <h6 class="text-white font-weight-normal">TAHUN PELAJARAN 2024/2025</h6>
         </div>
 
         @if(session('error'))

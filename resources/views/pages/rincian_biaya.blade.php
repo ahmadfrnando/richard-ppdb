@@ -14,7 +14,7 @@
       <div class="col-12 col-lg-9 px-0 px-md-3 mb-4">
         <div class="mb-md-3 px-3 px-md-5 py-4 py-md-5 bg-success shadow-sm">
           <h4 class="text-white mb-0">Rincian Biaya</h4>
-          <h4 class="text-white">SMK Muhammadiyah 1 Sukoharjo</h4>
+          <h4 class="text-white">SMK SWASTA KATOLIK MARIANA</h4>
           <h6 class="text-white font-weight-normal">TAHUN PELAJARAN 2022/2023</h6>
         </div>
         <div class="mb-3 px-3 px-md-5 py-4 py-md-5 bg-light shadow-sm">
@@ -26,7 +26,7 @@
             <div class="">
               <div class="mb-4">
                 <h6># Deskripsi</h6>
-                <p class="mb-0">Dalam hal pembiayaan SMK Muhammadiyah 1 Sukoharjo sangat transparan, semua dijelaskan
+                <p class="mb-0">Dalam hal pembiayaan SMK SWASTA KATOLIK MARIANA sangat transparan, semua dijelaskan
                   diawal. Sehingga tidak ada biaya yang tidak terinci. Adapun model pembiayaan yang kami lakukan sebagai
                   berikut: </p>
               </div>
@@ -36,7 +36,7 @@
                   <table class="table table-striped table-bordered">
                     <thead>
                       <tr>
-                        <th class="font-weight-medium text-center" scope="col">SMK MUHAMMADIYAH 1 SUKOHARJO</th>
+                        <th class="font-weight-medium text-center" scope="col">SMK SWASTA KATOLIK MARIANA</th>
                         <th class="font-weight-medium text-center" scope="col">SEKOLAH LAIN</th>
                       </tr>
                     </thead>
@@ -77,7 +77,7 @@
                   <table class="table table-striped table-bordered">
                     <thead>
                       <tr>
-                        <th class="font-weight-medium text-center" scope="col">SMK MUHAMMADIYAH 1 SUKOHARJO</th>
+                        <th class="font-weight-medium text-center" scope="col">SMK SWASTA KATOLIK MARIANA</th>
                         <th class="font-weight-medium text-center" scope="col">SEKOLAH LAIN</th>
                       </tr>
                     </thead>
@@ -102,7 +102,7 @@
                   <table class="table table-striped table-bordered">
                     <thead>
                       <tr>
-                        <th class="font-weight-medium text-center" scope="col" colspan="2">SMK MUHAMMADIYAH 1 SUKOHARJO
+                        <th class="font-weight-medium text-center" scope="col" colspan="2">SMK SWASTA KATOLIK MARIANA
                         </th>
                         <th class="font-weight-medium text-center" scope="col" colspan="2">SEKOLAH LAIN</th>
                       </tr>
@@ -267,7 +267,7 @@
                     </tbody>
                   </table>
                 </div>
-                <p class="mb-0 font-weight-medium">Kesimpulannya Biaya per bulan di SMK Muhammadiyah 1 Sukoharjo sudah
+                <p class="mb-0 font-weight-medium">Kesimpulannya Biaya per bulan di SMK SWASTA KATOLIK MARIANA sudah
                   mencakup keperluan biaya siswa dalam pendidikan, dan tidak ada penarikan biaya lagi selain itu selama
                   3 tahun.</p>
               </div>

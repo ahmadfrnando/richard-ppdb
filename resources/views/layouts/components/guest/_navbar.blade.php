@@ -27,18 +27,6 @@
           Tugas dan Tanggung Jawab
         </a>
       </li>
-      <li class="nav-item @yield('nav__item-jumlah-kelas')">
-        <a class="nav-link pr-2 pr-md-3 pl-2 pl-md-0" href="/kelas" style="white-space: nowrap;">
-          <i class="fas fa-chalkboard text-white mr-1 opacity-50 @yield('nav__icon-jumlah-kelas')" style="font-size: 0.74rem;"></i>
-          Jumlah Kelas
-        </a>
-      </li>
-      <li class="nav-item @yield('nav__item-ekstrakurikuler')">
-        <a class="nav-link pr-2 pr-md-3 pl-2 pl-md-0" href="/ekstrakurikuler" style="white-space: nowrap;">
-          <i class="fas fa-running text-white mr-1 opacity-50 @yield('nav__icon-ekstrakurikuler')" style="font-size: 0.74rem;"></i>
-          Ekstrakurikuler
-        </a>
-      </li>
       <li class="nav-item @yield('nav__item-fasilitas')">
         <a class="nav-link pr-2 pr-md-3 pl-2 pl-md-0" href="/fasilitas" style="white-space: nowrap;">
           <i class="fas fa-cogs text-white mr-1 opacity-50 @yield('nav__icon-fasilitas')" style="font-size: 0.74rem;"></i>

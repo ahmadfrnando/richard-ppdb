@@ -26,9 +26,7 @@ Route::get('/', [Guest\HomeController::class, 'index'])->name('index');
 Route::get('/profil', [Guest\HomeController::class, 'profil'])->name('profil');
 Route::get('/struktur-organisasi', [Guest\HomeController::class, 'strukturOrganisasi'])->name('struktur-organisasi');
 Route::get('/tugas', [Guest\HomeController::class, 'tugas'])->name('tugas');
-Route::get('/ekstrakurikuler', [Guest\HomeController::class, 'ekstrakurikuler'])->name('ekstrakurikuler');
 Route::get('/fasilitas', [Guest\HomeController::class, 'fasilitas'])->name('fasilitas');
-Route::get('/kelas', [Guest\HomeController::class, 'kelas'])->name('kelas');
 
 // CALON PENDAFTAR
 

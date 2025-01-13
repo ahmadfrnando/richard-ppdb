@@ -1,10 +1,10 @@
 <header class="bg-light py-3">
   <div class="container-lg d-flex justify-content-between">
     <a class="d-flex" href="/">
-      <img src="{{ asset('images/logo.svg') }}" height="56" alt="Logo SMK Muhammadiyah 1 Sukoharjo">
+      <img src="{{ asset('images/logo.svg') }}" height="56" alt="Logo SMK SWASTA KATOLIK MARIANA">
       <div class="ml-3">
         <h3 class="mb-0 font-weight-bold">PPDB ONLINE</h3>
-        <h6 class="mb-0 font-weight-semibold">SMK MUHAMMADIYAH 1 SUKOHARJO</h6>
+        <h6 class="mb-0 font-weight-semibold">SMK SWASTA KATOLIK MARIANA</h6>
       </div>
     </a>
     <div class="d-none align-items-center d-sm-flex">
