@@ -1,3 +1,9 @@
+{{-- UTIL --}}
+
+@section('nav__item-beranda', 'active')
+@section('nav__icon-beranda', 'opacity-100')
+
+{{-- MAIN --}}
 @extends('layouts.guest')
 
 @include('layouts.components.guest._header')
@@ -94,7 +100,7 @@
 <main style="margin-bottom: 200px">
   <div class="jumbotron jumbotron-fluid">
     <div class="container">
-      <h1 class="display-4 text-light">Selamat Datang di <span class="text-primary">SMK Swasta Katolik Marina</span></h1>
+      <h1 class="display-4 text-light">Selamat Datang di <span class="text-primary">SMA Swasta Katolik Marina</span></h1>
       <p class="lead text-light">Mencetak Generasi Unggul dan Siap Kerja</p>
       <a href="/pendaftaran">
         <button type="button" class="btn cta-btn">Daftar Sekarang</button>
@@ -103,40 +109,30 @@
   </div>
 
   <div class="container-lg">
-    <div class="row mb-5">
-      <div class="col-md-6 mb-4">
-        <div class="card h-100 shadow-sm">
-          <div class="card-body">
-            <h5 class="card-title">Tentang Kami</h5>
-            <p class="card-text">SMK Swasta Marina adalah lembaga pendidikan yang berkomitmen untuk mencetak lulusan yang berkualitas dan siap bersaing di dunia kerja. Kami menawarkan berbagai program studi yang relevan dengan kebutuhan industri.</p>
-            <a href="#" class="btn btn-primary">Selengkapnya</a>
-          </div>
-        </div>
-      </div>
-      <div class="col-md-6 mb-4">
-        <div class="card h-100 shadow-sm">
-          <div class="card-body">
-            <h5 class="card-title">Program Studi</h5>
-            <p class="card-text">Kami memiliki berbagai program studi, antara lain: Teknik Komputer dan Jaringan, Akuntansi, dan Desain Grafis. Setiap program dirancang untuk memberikan keterampilan praktis yang dibutuhkan di dunia kerja.</p>
-            <a href="#" class="btn btn-primary">Selengkapnya</a>
-          </div>
-        </div>
+    <div class="row justify-content-center align-items-center text-center mb-5">
+      <div class="col-md-8">
+        <h1 class="display-4 mb-3 font-weight-bold">Tentang Kami</h1>
+        <p class="lead mb-4" style="font-size: 1.25rem; line-height: 1.8;">SMA Swasta Marina adalah lembaga pendidikan yang berkomitmen untuk mencetak lulusan yang berkualitas dan siap bersaing di dunia kerja. Kami menawarkan berbagai program studi yang relevan dengan kebutuhan industri.</p>
+        <a href="/profil" class="btn btn-light btn-lg px-5 py-3" style="border-radius: 50px; font-weight: bold;">Selengkapnya</a>
       </div>
     </div>
 
     <!-- Galeri -->
     <div class="row mb-5 gallery">
-      <div class="col-12">
+      <div class="col-12 text-center">
         <h2 class="section-title">Galeri</h2>
       </div>
-      <div class="col-md-4 mb-4">
-        <img src="{{ asset('images/foto4.jpeg') }}" loading="lazy" class="img-fluid shadow-sm" alt="Galeri 1">
+      <div class="col-md-4 mb-4 d-flex justify-content-center">
+        <img src="{{ asset('images/foto4.jpeg') }}" loading="lazy" class=" shadow-sm mx-auto" alt="Galeri 1" style="border-radius: 10px; max-height: 300px; object-fit: cover;">
       </div>
-      <div class="col-md-4 mb-4">
-        <img src="{{ asset('images/foto5.jpeg') }}" loading="lazy" class="img-fluid shadow-sm" alt="Galeri 2">
+      <div class="col-md-4 mb-4 d-flex justify-content-center">
+        <img src="{{ asset('images/foto5.jpeg') }}" loading="lazy" class="img-fluid shadow-sm" alt="Galeri 2" style="border-radius: 10px; max-height: 300px; object-fit: cover;">
       </div>
-      <div class="col-md-4 mb-4">
-        <img src="{{ asset('images/foto6.jpeg') }}" loading="lazy" class="img-fluid shadow-sm" alt="Galeri 3">
+      <div class="col-md-4 mb-4 d-flex justify-content-center">
+        <img src="{{ asset('images/foto6.jpeg') }}" loading="lazy" class="img-fluid shadow-sm" alt="Galeri 3" style="border-radius: 10px; max-height: 300px; object-fit: cover;">
+      </div>
+      <div class="col-12 text-center mt-3">
+        <a href="/galeri" class="btn btn-primary px-5 py-2" style="border-radius: 50px; font-weight: bold;">Lihat Semua Galeri</a>
       </div>
     </div>
 
@@ -175,7 +171,7 @@
             <h5 class="card-title">Hubungi Kami</h5>
             <p class="card-text">Jika Anda memiliki pertanyaan atau ingin mendapatkan informasi lebih lanjut, silakan hubungi kami melalui:</p>
             <ul class="list-unstyled">
-              <li><i class="fas fa-envelope"></i> Email: <a href="mailto:info@smkmarina.sch.id">info@smkmarina.sch.id</a></li>
+              <li><i class="fas fa-envelope"></i> Email: <a href="mailto:info@smamarina.sch.id">info@smamarina.sch.id</a></li>
               <li><i class="fas fa-phone"></i> Telepon: (021) 123-4567</li>
               <li><i class="fas fa-map-marker-alt"></i> Alamat: Jl. Pendidikan No. 1, Jakarta</li>
             </ul>

@@ -22,11 +22,12 @@ use App\Http\Controllers\SiswaController;
 */
 
 // GUEST
-Route::get('/', [Guest\HomeController::class, 'index'])->name('index');
+Route::get('/', [Guest\HomeController::class, 'index'])->name('home');
 Route::get('/profil', [Guest\HomeController::class, 'profil'])->name('profil');
 Route::get('/struktur-organisasi', [Guest\HomeController::class, 'strukturOrganisasi'])->name('struktur-organisasi');
 Route::get('/tugas', [Guest\HomeController::class, 'tugas'])->name('tugas');
 Route::get('/fasilitas', [Guest\HomeController::class, 'fasilitas'])->name('fasilitas');
+Route::get('/galeri', [Guest\HomeController::class, 'galeri'])->name('galeri');
 
 // CALON PENDAFTAR
 

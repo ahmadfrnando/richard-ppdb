@@ -1,13 +1,6 @@
 <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
   <div class="container-lg d-flex justify-content-center justify-content-md-between">
     <ul class="navbar-nav flex-row">
-      <li class="nav-item @yield('nav__item-beranda')">
-        <a class="nav-link pr-2 pr-md-3 pl-2 pl-md-0" href="/">
-          <i class="fas fa-home text-white mr-1 opacity-50 @yield('nav__icon-beranda')"
-            style="font-size: 0.74rem;"></i>
-          Beranda
-        </a>
-      </li>
       <li class="nav-item @yield('nav__item-pendaftaran')">
         <a class="nav-link pr-2 pr-md-3 pl-2 pl-md-0" href="/pendaftaran">
           <i class="fas fa-pen text-white mr-1 opacity-50 @yield('nav__icon-pendaftaran')"
@@ -30,6 +23,9 @@
       </li>
     </ul>
     <div class="d-none align-items-center d-md-flex">
+    <a href="/beranda" class="text-light font-weight-normal mx-2">
+      Beranda
+    </a>
       <div class="dropdown">
         <a class="dropdown-toggle text-light font-weight-normal pl-2" href="#" role="button" data-toggle="dropdown"
           aria-haspopup="true" aria-expanded="false">
@@ -50,6 +46,9 @@
 </nav>
 <div class="bg-success d-block py-2 d-md-none">
   <div class="container-lg d-flex justify-content-center align-items-center">
+    <a href="/beranda" class="text-light font-weight-normal mx-2">
+      Beranda
+    </a>
     <div class="dropdown">
       <a class="dropdown-toggle text-light font-weight-normal mx-2 pb-1" href="#" role="button" data-toggle="dropdown"
         aria-haspopup="true" aria-expanded="false">

@@ -1,3 +1,9 @@
+{{-- UTIL --}}
+
+@section('nav__item-profil', 'active')
+@section('nav__icon-profil', 'opacity-100')
+
+{{-- MAIN --}}
 @extends('layouts.guest')
 
 @include('layouts.components.guest._header')

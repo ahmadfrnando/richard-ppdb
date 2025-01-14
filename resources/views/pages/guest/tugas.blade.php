@@ -1,3 +1,9 @@
+{{-- UTIL --}}
+
+@section('nav__item-tugas', 'active')
+@section('nav__icon-tugas', 'opacity-100')
+
+{{-- MAIN --}}
 @extends('layouts.guest')
 
 @include('layouts.components.guest._header')

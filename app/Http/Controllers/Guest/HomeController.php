@@ -31,15 +31,9 @@ class HomeController extends Controller
     {
         return view('pages.guest.fasilitas');
     }
-
-    public function ekstrakurikuler()
+    public function galeri()
     {
-        return view('pages.guest.ekstrakurikuler');
-    }
-
-    public function kelas()
-    {
-        return view('pages.guest.kelas');
+        return view('pages.guest.galeri');
     }
 
 }

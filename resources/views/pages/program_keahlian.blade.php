@@ -14,7 +14,7 @@
       <div class="col-12 col-lg-9 px-0 px-md-3 mb-4">
         <div class="mb-md-3 px-3 px-md-5 py-4 py-md-5 bg-success shadow-sm">
           <h4 class="text-white mb-0">Program Keahlian</h4>
-          <h4 class="text-white">SMK SWASTA KATOLIK MARIANA</h4>
+          <h4 class="text-white">SMA SWASTA KATOLIK MARIANA</h4>
           <h6 class="text-white font-weight-normal">TAHUN PELAJARAN 2022/2023</h6>
         </div>
         <div class="mb-3 px-3 px-md-5 py-4 py-md-5 bg-light shadow-sm">
@@ -97,7 +97,7 @@
                 <p class="mb-0">a. Kurikulum yang digunakan merupakan kolaborasi dengan PT. Robota Indonesia.</p>
                 <p class="mb-0">b. Menghasilkan lulusan yang terampil dalam bidang perancangan,perakitan dan pemrograman
                   robotik.</p>
-                <p class="mb-0">c. Siswa lulus mendapatkan ijasah SMK dan Seritifikat Robotik dari PT. Robota Indonesia
+                <p class="mb-0">c. Siswa lulus mendapatkan ijasah SMA dan Seritifikat Robotik dari PT. Robota Indonesia
                 </p>
                 <p class="mb-0">d. Lulusan bisa bekerja di perusahaan manufacturing, berwirausaha dan melanjutkan ke
                   perguruan tinggi.
@@ -131,7 +131,7 @@
                 </p>
                 <p class="mb-0">e. Program ini menggunakan kurikulum Yamaha, sarana dan alat praktek standar Yamaha.
                 </p>
-                <p class="mb-0">f. Siswa lulus mendapatkan ijasah SMK dan Seritifikat Basic Mechanic Training (BMT)
+                <p class="mb-0">f. Siswa lulus mendapatkan ijasah SMA dan Seritifikat Basic Mechanic Training (BMT)
                 </p>
                 <p class="mb-0">g. Labor recruitment oleh dealer resmi sepeda motor Yamaha, (Labor recruitment oleh
                   dealer sepeda motor berbagai merk: Honda, Suzuki, Kawasaki, Yamaha, dan bengkel umum untuk Teknik

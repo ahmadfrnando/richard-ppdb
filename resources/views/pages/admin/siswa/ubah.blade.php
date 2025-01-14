@@ -238,7 +238,7 @@
             </div>
           </div>
           <div class="form-group">
-            <label for="saudara">Saudara di SMK</label>
+            <label for="saudara">Saudara di SMA</label>
             <input type="text" class="form-control" id="saudara" name="saudara" autocomplete="off"
               value="{{ $siswa->saudara }}">
             <small class="form-text text-muted">ex: <span class="text-dark">Rigen Maulana RPL 1</span></small>

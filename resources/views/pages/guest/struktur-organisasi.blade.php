@@ -1,3 +1,9 @@
+{{-- UTIL --}}
+
+@section('nav__item-struktur-organisasi', 'active')
+@section('nav__icon-struktur-organisasi', 'opacity-100')
+
+{{-- MAIN --}}
 @extends('layouts.guest')
 
 @include('layouts.components.guest._header')

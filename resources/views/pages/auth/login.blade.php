@@ -5,7 +5,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Dashboard PPDB SMK SWASTA KATOLIK MARIANA</title>
+  <title>Dashboard PPDB SMA SWASTA KATOLIK MARIANA</title>
   <link rel="stylesheet" href="{{asset('/css/bootstrap.min.css')}}">
   <link rel="stylesheet" href="{{asset('/css/all.css')}}">
   <link rel="stylesheet" href="{{asset('/css/style.css')}}">

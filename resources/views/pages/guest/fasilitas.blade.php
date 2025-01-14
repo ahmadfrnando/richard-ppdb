@@ -1,3 +1,9 @@
+{{-- UTIL --}}
+
+@section('nav__item-fasilitas', 'active')
+@section('nav__icon-fasilitas', 'opacity-100')
+
+{{-- MAIN --}}
 @extends('layouts.guest')
 
 @include('layouts.components.guest._header')
