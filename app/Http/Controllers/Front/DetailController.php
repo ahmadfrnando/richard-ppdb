@@ -44,4 +44,11 @@ class DetailController extends Controller
 
         return redirect()->route('detail');
     }
+
+    public function bukti($id){
+
+        $data = Siswa::find($id);
+        $pdf = \Barryvdh\DomPDF\Facade\Pdf::loadView('pages.bukti-pendaftaran', compact('data'));
+        return $pdf->download('bukti-pendaftaran.pdf');
+    }
 }

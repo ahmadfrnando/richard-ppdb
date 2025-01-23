@@ -14,36 +14,34 @@
   <div class="container-lg d-flex justify-content-center py-4">
     <div class="col-12 col-md-10 col-lg-8 p-0">
       <div class="alert alert-info py-3" role="alert">
-        <h4 class="alert-heading text-dark">Selamat, {{ $siswa->nama }} !</h4>
-        <p>Aww yeah, you successfully read this important alert message. This example text is going to run a bit longer
-          so
-          that you can see how spacing within an alert works with this kind of content.</p>
+        <h4 class="alert-heading text-dark">Selamat Datang, {{ $siswa->nama }} !</h4>
+        <p>Terima kasih telah mendaftar di SMA Swasta Katolik Marina, silahkan tunggu konfirmasi dari admin untuk berkas pendaftaran anda. Cek pengumuman untuk informasi lebih lanjut.</p>
         <hr>
-        <p class="mb-0">Whenever you need to, be sure to use margin utilities to keep things nice and tidy.</p>
+        <p class="mb-0">Pastikan anda sudah mengunduh bukti pendaftaran anda.</p>
       </div>
       <div class="row mb-4">
-        <div class="col-12 col-sm-6">
+        <div class="col-12 col-sm-12">
           <div class="card bg-primary mb-3">
             <div class="card-body">
               <h5 class="card-title text-light font-weight-medium">Pengumuman</h5>
-              <p class="card-text text-light">With supporting text below as a natural lead-in to additional content.</p>
+              <p class="card-text text-light">Lihat hasil pengumuma <span class="text-danger">(belum ada)</span></p>
               <div class="text-right">
                 <a href="/siswa/pengumuman" class="btn btn-light">Buka</a>
               </div>
             </div>
           </div>
         </div>
-        <div class="col-12 col-sm-6">
+        <!-- <div class="col-12 col-sm-6">
           <div class="card bg-warning mb-3">
             <div class="card-body">
               <h5 class="card-title text-light font-weight-medium">Daftar Ulang</h5>
-              <p class="card-text text-light">With supporting text below as a natural lead-in to additional content.</p>
+              <p class="card-text text-light">Lakukan pendaftaran ulang jika anda dinyatakan lulus oleh admin</p>
               <div class="text-right">
                 <a href="/siswa/daftar-ulang" class="btn btn-light">Buka</a>
               </div>
             </div>
           </div>
-        </div>
+        </div> -->
       </div>
       <div class="text-center">
         <a href="{{ route('logout') }}" class="btn btn-danger">Keluar</a>

@@ -11,11 +11,11 @@
           Pengumuman
         </a>
       </li>
-      <li class="nav-item @yield('nav__item-siswa-daftar-ulang')">
+      <!-- <li class="nav-item @yield('nav__item-siswa-daftar-ulang')">
         <a class="nav-link p-0 px-2" href="/siswa/daftar-ulang">
           Daftar Ulang
         </a>
-      </li>
+      </li> -->
     </ul>
   </div>
 </nav>

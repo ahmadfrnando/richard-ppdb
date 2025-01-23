@@ -6,6 +6,7 @@ use App\Http\Controllers\Front;
 use App\Http\Controllers\Guest;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\GaleriController;
 use App\Http\Controllers\KonfirmasiController;
 use App\Http\Controllers\PengumumanController;
 use App\Http\Controllers\SiswaController;
@@ -43,6 +44,7 @@ Route::post('/pendaftaran/store', [Front\PendaftaranController::class, 'store'])
 
 Route::get('/detail', [Front\DetailController::class, 'index'])->name('detail');
 Route::post('/detail/search', [Front\DetailController::class, 'search'])->name('search');
+Route::get('/detail/bukti-pendaftaran/{id}', [Front\DetailController::class, 'bukti'])->name('bukti-pendaftaran');
 
 Route::get('/konfirmasi', [Front\KonfirmasiController::class, 'index'])->name('konfirmasi');
 Route::post('/konfirmasi/store', [Front\KonfirmasiController::class, 'store'])->name('konfirmasi.store');
@@ -104,4 +106,12 @@ Route::group(['middleware' => ['auth', 'checkRole:admin']], function () {
     Route::post('/admin/pengumuman/{id}/update', [PengumumanController::class, 'update'])->name('admin.pengumuman.update');
 
     Route::get('/admin/pengumuman/{id}/destroy', [PengumumanController::class, 'destroy'])->name('admin.pengumuman.destroy');
+
+    Route::get('/admin/galeri', [GaleriController::class, 'index'])->name('admin.galeri');
+
+    Route::post('/admin/galeri/store', [GaleriController::class, 'store'])->name('admin.galeri.store');
+
+    Route::post('/admin/galeri/{id}/update', [GaleriController::class, 'update'])->name('admin.galeri.update');
+
+    Route::get('/admin/galeri/{id}/destroy', [GaleriController::class, 'destroy'])->name('admin.galeri.destroy');
 });

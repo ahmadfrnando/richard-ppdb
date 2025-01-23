@@ -45,17 +45,12 @@ class AuthController extends Controller
                 if (count($siswa)) {
                     $siswa = $siswa[0];
 
-                    if ($siswa->status) {
-                        Auth::attempt($request->only('username', 'password'));
+                    Auth::attempt($request->only('username', 'password'));
 
-                        if (Auth::check()) {
-                            return redirect()->route('siswa')->with('success', 'Berhasil Masuk ...');
-                        }
-
-                        return Redirect::back()->with('error', 'PIN yang dimasukkan tidak valid ...');
+                    if (Auth::check()) {
+                        return redirect()->route('siswa')->with('success', 'Berhasil Masuk ...');
                     }
-
-                    return Redirect::back()->with('error', 'Silahkan lakukan Konfirmasi Pembayaran ...');
+                    return Redirect::back()->with('error', 'PIN yang dimasukkan tidak valid ...');
                 }
 
                 return Redirect::back()->with('error', 'NISN yang dimasukkan tidak valid ...');
@@ -69,6 +64,6 @@ class AuthController extends Controller
     {
         Auth::logout();
 
-        return redirect()->route('login');
+        return redirect()->route('masuk');
     }
 }

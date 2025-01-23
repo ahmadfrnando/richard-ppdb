@@ -40,7 +40,7 @@
   <div class="col-12">
     <div class="card">
       <div class="card-header">
-        <h4>Total Pendaftar per Jurusan</h4>
+        <h4>Total Pendaftar</h4>
       </div>
       <div class="card-body">
         <div class="table-responsive">
@@ -48,70 +48,26 @@
             <thead>
               <tr>
                 <th scope="col">#</th>
-                <th scope="col">Jurusan</th>
+                <th scope="col">Nama</th>
                 <th scope="col">Progress</th>
-                <th scope="col">Total</th>
+                <th scope="col">Aksi</th>
               </tr>
             </thead>
             <tbody>
+              @foreach($data as $key => $siswa)
               <tr>
-                <th scope="row">1</th>
-                <td>Teknik Otomotif</td>
+                <th scope="row">{{ $loop->index + 1 }}</th>
+                <td>{{ $siswa->nama }}</td>
                 <td>
                   <div class="progress" data-height="4" data-toggle="tooltip" title="" data-original-title="100%"
                     style="height: 4px;">
-                    <div class="progress-bar bg-success" data-width="{{ $to / 252 * 100 }}" style="width: 100px;"></div>
+                    <div class="progress-bar bg-success" data-width="{{ $siswa->status / 3 * 100 }}" style="width: 100px;"></div>
                   </div>
                 </td>
-                <td>{{ $to }} / 252</td>
+                <td><a href="#" data-toggle="modal"
+                    class="btn btn-warning mr-2 mb-2">Detail</a></td>
               </tr>
-              <tr>
-                <th scope="row">2</th>
-                <td>Teknik Mesin</td>
-                <td>
-                  <div class="progress" data-height="4" data-toggle="tooltip" title="" data-original-title="100%"
-                    style="height: 4px;">
-                    <div class="progress-bar bg-success" data-width="{{ $tm / 64 * 100 }}" style="width: 100px;"></div>
-                  </div>
-                </td>
-                <td>{{ $tm }} / 64</td>
-              </tr>
-              <tr>
-                <th scope="row">3</th>
-                <td>Teknik Elektronika</td>
-                <td>
-                  <div class="progress" data-height="4" data-toggle="tooltip" title="" data-original-title="100%"
-                    style="height: 4px;">
-                    <div class="progress-bar bg-success" data-width="{{ $te / 72 * 100 }}" style="width: 100px;"></div>
-                  </div>
-                </td>
-                <td>{{ $te }} / 36</td>
-              </tr>
-              <tr>
-                <th scope="row">4</th>
-                <td>Teknik Komputer Jaringan dan Telekomunikasi</td>
-                <td>
-                  <div class="progress" data-height="4" data-toggle="tooltip" title="" data-original-title="100%"
-                    style="height: 4px;">
-                    <div class="progress-bar bg-success" data-width="{{ $tkjt / 72 * 100 }}" style="width: 100px;">
-                    </div>
-                  </div>
-                </td>
-                <td>{{ $tkjt }} / 72</td>
-              </tr>
-              <tr>
-                <th scope="row">5</th>
-                <td>Pengembangan Perangkat Lunak dan Gim</td>
-                <td>
-                  <div class="progress" data-height="4" data-toggle="tooltip" title="" data-original-title="100%"
-                    style="height: 4px;">
-                    <div class="progress-bar bg-success" data-width="{{ $pplg / 72 * 100 }}" style="width: 100px;">
-                    </div>
-                  </div>
-                </td>
-                <td>{{ $pplg }} / 72
-                </td>
-              </tr>
+              @endforeach
             </tbody>
           </table>
         </div>

@@ -11,7 +11,6 @@ class PengumumanController extends Controller
     public function index()
     {
         $pengumuman = Pengumuman::orderBy('id', 'DESC')->get();
-
         return view('/pages/admin/pengumuman/index', compact('pengumuman'));
     }
 

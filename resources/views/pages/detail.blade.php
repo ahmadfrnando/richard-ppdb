@@ -54,8 +54,8 @@
               </div>
               <div class="col-12 col-md-6">
                 <div class="">
-                  <label class="mb-0">Program Keahlian: </label>
-                  <p class="font-weight-medium">{{ $siswa->program_keahlian }}</p>
+                  <label class="mb-0">Jurusan: </label>
+                  <p class="font-weight-medium">{{ $siswa->jurusan }}</p>
                 </div>
               </div>
             </div>
@@ -65,9 +65,10 @@
               <h6 class="font-weight-semibold">PERHATIAN :</h6>
               <small class="m-0 d-block">- Cek apakah data sudah benar.</small>
               <small class="m-0 d-block">- Silahkan unduh bukti pendaftaran dengan klik tombol dibawah.</small>
+              <small class="m-0 d-block">- Silahkan cek nisn dan pin pada bukti pendaftaran, untuk dapat login ker portal PPDB.</small>
             </div>
-            <a href="/detail/bukti_pendaftaran" class="btn btn-success py-2 w-100 mb-2">Unduh Bukti Pendaftaran</a>
-            <a href="/konfirmasi" class="btn btn-primary py-2 w-100 mb-2">Konfirmasi Pembayaran</a>
+            <a href="/detail/bukti-pendaftaran/{{ $siswa->id }}" class="btn btn-success py-2 w-100 mb-2">Unduh Bukti Pendaftaran</a>
+            <a href="/masuk" class="btn btn-primary py-2 w-100 mb-2">Masuk</a>
           </div>
         </div>
 

@@ -18,7 +18,8 @@ class DashboardController extends Controller
         $te = $siswa->where('program_keahlian', 'Teknik Elektronika')->count();
         $tkjt = $siswa->where('program_keahlian', 'Teknik Komputer Jaringan dan Telekomunikasi')->count();
         $pplg = $siswa->where('program_keahlian', 'Pengembangan Perangkat Lunak dan Gim')->count();
+        $data=[];
 
-        return view('pages/admin/index', compact('siswa', 'pengumuman', 'to', 'tm', 'te', 'tkjt', 'pplg'));
+        return view('pages/admin/index', compact('siswa', 'pengumuman', 'to', 'tm', 'te', 'tkjt', 'pplg', 'data'));
     }
 }

@@ -40,19 +40,19 @@
         <tbody>
           <?php $count = 1; ?>
           @foreach ($konfirmasi as $data)
-          @if(!$data->siswa->status)
+          <!-- @if(!$data->siswa->status) -->
           <tr>
             <th scope="row">{{ $count }}</th>
             <td>{{ $data->nisn }}</td>
             <td>{{ $data->nama }}</td>
-            <td>{{ $data->nomer_hp }}</td>
+            <td>{{ $data->nomor_hp }}</td>
             <td>
               <a href="{{ route('admin.konfirmasi.detail', ['id' => $data->id]) }}"
                 class="btn btn-info mr-2 mb-2">Detail</a>
             </td>
           </tr>
           <?php $count++ ?>
-          @endif
+          <!-- @endif -->
           @endforeach
         </tbody>
       </table>

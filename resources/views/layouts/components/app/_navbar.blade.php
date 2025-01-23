@@ -8,11 +8,10 @@
           Pendaftaran
         </a>
       </li>
-      <li class="nav-item @yield('nav__item-konfirmasi')">
-        <a class="nav-link pr-2 pr-md-3 pl-2 pl-md-0" href="/konfirmasi">
-          <i class="fas fa-check text-white mr-1 opacity-50 @yield('nav__icon-konfirmasi')"
-            style="font-size: 0.82rem;"></i>
-          Konfirmasi
+      <li class="nav-item @yield('nav__item-persyaratan')">
+        <a class="nav-link pr-2 pr-md-3 pl-2 pl-md-0" href="/persyaratan-pendaftaran">
+          <i class="fas fa-list-alt text-white mr-1 opacity-50 @yield('nav__icon-persyaratan')" style="font-size: 0.74rem;"></i>
+          Persyaratan Pendaftaran
         </a>
       </li>
       <li class="nav-item @yield('nav__item-masuk')">
@@ -26,18 +25,6 @@
     <a href="/beranda" class="text-light font-weight-normal mx-2">
       Beranda
     </a>
-      <div class="dropdown">
-        <a class="dropdown-toggle text-light font-weight-normal pl-2" href="#" role="button" data-toggle="dropdown"
-          aria-haspopup="true" aria-expanded="false">
-          Informasi
-        </a>
-        <div class="dropdown-menu">
-          <a class="dropdown-item" href="/persyaratan-pendaftaran">Persyaratan Pendaftaran</a>
-          <a class="dropdown-item" href="/rincian-biaya">Rincian Biaya</a>
-          <a class="dropdown-item" href="/profile-sekolah">Profile Sekolah</a>
-          <a class="dropdown-item" href="/program-keahlian">Program Keahlian</a>
-        </div>
-      </div>
       <a href="#" class="text-light font-weight-normal pl-2" data-toggle="modal" data-target="#modal_kontak">
         Kontak
       </a>

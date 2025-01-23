@@ -30,17 +30,11 @@ class MasukController extends Controller
         if (count($siswa)) {
             $siswa = $siswa[0];
 
-            if ($siswa->status) {
-                Auth::attempt($request->only('username', 'password'));
+            Auth::attempt($request->only('username', 'password'));
 
-                if (Auth::check()) {
-                    return redirect()->route('siswa')->with('success', 'Berhasil Masuk ...');
-                }
-
-                return redirect()->route('masuk')->with('error', 'PIN yang dimasukkan tidak valid ...');
+            if (Auth::check()) {
+                return redirect()->route('siswa')->with('success', 'Berhasil Masuk ...');
             }
-
-            return redirect()->route('masuk')->with('error', 'Silahkan lakukan Konfirmasi Pembayaran ...');
         }
 
         return redirect()->route('masuk')->with('error', 'NISN yang dimasukkan tidak valid ...');

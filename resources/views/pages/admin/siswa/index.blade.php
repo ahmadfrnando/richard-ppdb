@@ -19,24 +19,6 @@
         </a>
       </div>
     </div>
-    <div class="col-12 col-sm-6 p-0 mb-2">
-      <div class="d-flex align-items-end flex-column">
-        <form action="/admin/siswa" method="get" class="d-flex">
-          <select class="form-control py-0 ml-2" name="program_keahlian" autocomplete="off" style="height: 2rem;">
-            @if($program_keahlian)
-            <option value="{{ $program_keahlian }}">{{ $program_keahlian }}</option>
-            @endif
-            <option value="">-- Semua Program Keahlian --</option>
-            <option value="TO">Teknik Otomotif</option>
-            <option value="TM">Teknik Mesin</option>
-            <option value="TE">Teknik Elektronika</option>
-            <option value="TKJT">Teknik Komputer Jaringan dan Telekomunikasi</option>
-            <option value="PPLG">Pengembangan Perangkat Lunak dan Gim</option>
-          </select>
-          <button class="btn btn-primary ml-2">Cari</button>
-        </form>
-      </div>
-    </div>
   </div>
   <div class="card-body">
     <div class="table-responsive">
@@ -45,7 +27,6 @@
           <tr>
             <th scope="col">No</th>
             <th scope="col">NISN</th>
-            <th scope="col">Program Keahlian</th>
             <th scope="col">Nama</th>
             <th scope="col">PIN</th>
             <th scope="col">Status</th>
@@ -58,7 +39,6 @@
           <tr>
             <td>{{ $count }}</td>
             <td>{{ $data->nisn }}</td>
-            <td>{{ $data->program_keahlian }}</td>
             <td>{{ $data->nama }}</td>
             <td>{{ $data->pin }}</td>
             <td>
@@ -74,7 +54,7 @@
                 onclick="$('#modal__status #form__status').attr('action', '/admin/siswa/{{ $data->id }}/status')"
                 class="badge badge-danger mr-2 mb-2">
                 <i class="fas fa-circle text-white mr-2" style="font-size: 0.6rem;"></i>
-                <span>Non-Aktif</span>
+                <span>Belum verifikasi</span>
               </a>
               @endif
             </td>

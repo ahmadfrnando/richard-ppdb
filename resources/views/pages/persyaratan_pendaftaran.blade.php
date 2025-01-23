@@ -1,4 +1,6 @@
 {{-- UTIL --}}
+@section('nav__item-persyaratan', 'active')
+@section('nav__icon-persyaratan', 'opacity-100')
 
 {{-- MAIN --}}
 
@@ -25,11 +27,12 @@
             </div>
             <div class="">
               <div class="mb-4">
-                <h6># Calon siswa berpakaian seragam sekolah SMP/MTs, didampingi orang tua hadir kesekolah mendaftarkan
+                <h6># Calon siswa berpakaian seragam sekolah SMP, didampingi orang tua hadir kesekolah mendaftarkan
                   diri dengan membawa berkas persyaratan :</h6>
+                <p class="mb-0">1. Bukti Pendaftaran Online</p>
                 <p class="mb-0">1. Fotokopi Kartu Keluarga (KK)</p>
-                <p class="mb-0">2. Fotokopi Akta Kelahiran</p>
-                <p class="mb-0">3. Uang pendaftaran Rp. 100.000- ( Seratus Ribu Rupiah )</p>
+                <p class="mb-0">1. Fotokopi SKHU</p>
+                <p class="mb-0">2. Fotokopi Ijazah</p>
                 <p class="mb-0 ml-3">a. Surat keterangan dari Kepala Sekolah bila rangking kelas 1-3
                 </p>
                 <p class="mb-0 ml-3">b. Foto copy piagam prestasi akademik/non akademik dan

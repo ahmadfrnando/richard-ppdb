@@ -13,6 +13,8 @@
   <link rel="stylesheet" href="{{asset('/css/dataTables.bootstrap4.min.css')}}">
   <link rel="stylesheet" href="{{asset('/css/bootstrap-datepicker.min.css')}}">
   <link rel="stylesheet" href="{{asset('/css/admin.css')}}">
+  <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+    integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
 </head>
 
 <body>
@@ -43,7 +45,7 @@
       <div class="main-sidebar">
         <aside id="sidebar-wrapper">
           <div class="sidebar-brand">
-            <a href="/admin">PPDB Mutuharjo</a>
+            <a href="/admin">ADMIN PPDB</a>
           </div>
           <ul class="sidebar-menu">
             <li class="menu-header">GRAFIK</li>
@@ -70,6 +72,12 @@
               <a class="nav-link" href="/admin/konfirmasi">
                 <i class="fas fa-key"></i>
                 <span>Konfirmasi</span>
+              </a>
+            </li>
+            <li class="@yield('nav__item-admin-galeri')">
+              <a class="nav-link" href="/admin/galeri">
+                <i class="fas fa-images"></i>
+                <span>Geleri</span>
               </a>
             </li>
           </ul>
