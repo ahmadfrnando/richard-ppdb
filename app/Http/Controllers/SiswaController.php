@@ -22,10 +22,9 @@ class SiswaController extends Controller
     }
     
     public function store(Request $request)
-    {
+    {   
         date_default_timezone_set("Asia/Jakarta");
 
-        // dd($request->all());
         $request->validate([
             'nama' => 'required',
             'tempat_lahir' => 'required',
@@ -40,17 +39,18 @@ class SiswaController extends Controller
             'pekerjaan_ayah' => 'required',
             'pendidikan_ayah' => 'required',
             'nama_ibu' => 'required',
+            'umur_ibu' => 'required',
             'pendidikan_ibu' => 'required',
             'pekerjaan_ibu' => 'required',
             'nomor_hp_ortu' => 'required',
             'alamat_orang_tua' => 'required',
-            'keterangan_ortu' => 'required',
             'nilai_skhu' => 'required',
             'rata_rata_skhu' => 'required',
             'nomor_ijazah' => 'required',
             'nilai_ijazah' => 'required',
             'rata_rata_ijazah' => 'required',
         ]);
+        // dd($request->all());
 
         $nomor_pendaftaran = 'ID' . '-' . rand(1000, 9999);
         $pin = rand(1000, 9999);
@@ -100,13 +100,13 @@ class SiswaController extends Controller
     {
         $siswa = Siswa::find($id);
 
-        if ($siswa->status) {
+        if ($siswa->status == 1) {
             $siswa->update([
-                'status' => false
+                'status' => 2
             ]);
         } else {
             $siswa->update([
-                'status' => true
+                'status' => 1
             ]);
         }
 

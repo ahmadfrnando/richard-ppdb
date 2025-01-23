@@ -33,26 +33,44 @@
             <th scope="col">No</th>
             <th scope="col">NISN</th>
             <th scope="col">Nama</th>
-            <th scope="col">Nomer HP</th>
+            <th scope="col">Nomor HP</th>
+            <th scope="col">Status</th>
             <th scope="col">Action</th>
           </tr>
         </thead>
         <tbody>
           <?php $count = 1; ?>
           @foreach ($konfirmasi as $data)
-          <!-- @if(!$data->siswa->status) -->
+          @if($data->status)
           <tr>
             <th scope="row">{{ $count }}</th>
             <td>{{ $data->nisn }}</td>
             <td>{{ $data->nama }}</td>
             <td>{{ $data->nomor_hp }}</td>
             <td>
+              @if($data->status == 2)
+              <a href="#modal__status" data-toggle="modal"
+                onclick="$('#modal__status #form__status').attr('action', '/admin/siswa/{{ $data->id }}/status')"
+                class="badge badge-success mr-2 mb-2">
+                <i class="fas fa-circle text-white mr-2" style="font-size: 0.6rem;"></i>
+                <span>Sudah dikonfirmasi</span>
+              </a>
+              @else
+              <a href="#modal__status" data-toggle="modal"
+                onclick="$('#modal__status #form__status').attr('action', '/admin/siswa/{{ $data->id }}/status')"
+                class="badge badge-danger mr-2 mb-2">
+                <i class="fas fa-circle text-white mr-2" style="font-size: 0.6rem;"></i>
+                <span>Belum dikonfirmasi</span>
+              </a>
+              @endif
+            </td>
+            <td>
               <a href="{{ route('admin.konfirmasi.detail', ['id' => $data->id]) }}"
                 class="btn btn-info mr-2 mb-2">Detail</a>
             </td>
           </tr>
           <?php $count++ ?>
-          <!-- @endif -->
+          @endif
           @endforeach
         </tbody>
       </table>
@@ -63,7 +81,24 @@
 @endsection
 
 @section('modal')
-
+<div class="modal fade" id="modal__status" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <form id="form__status" action="" method="get">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Yakin mengubah status pendaftar ?</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary ml-2" data-dismiss="modal">Kembali</button>
+          <button type="submit" class="btn btn-primary ml-2">Lanjutkan</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
 <!-- Modal Status -->
 <div class="modal fade" id="modal__status" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog">

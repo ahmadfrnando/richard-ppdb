@@ -63,7 +63,7 @@
           </div>
           <div class="form-group">
             <label for="nomor_hp">Nomor HP<span class="text-danger">*</span></label>
-            <input type="text" class="form-control @error('nomor_hp') is-invalid @enderror" id="nomor_hp"
+            <input type="number" class="form-control @error('nomor_hp') is-invalid @enderror" id="nomor_hp"
               name="nomor_hp" autocomplete="off" required>
             <small class="form-text text-muted">ex: <span class="text-dark">08123456789</span></small>
           </div>
@@ -102,7 +102,7 @@
           </div>
           <div class="form-group">
             <label for="nilai_ijazah">Nilai Ijazah<span class="text-danger">*</span></label>
-            <input type="text" class="form-control @error('nilai_ijazah') is-invalid @enderror" id="nilai_ijazah"
+            <input type="number" class="form-control @error('nilai_ijazah') is-invalid @enderror" id="nilai_ijazah"
               name="nilai_ijazah" autocomplete="off" required>
           </div>
           <div class="form-group">
@@ -199,7 +199,7 @@
           </div>
           <div class="form-group">
             <label for="nomor_hp_ortu">Nomor HP Orang Tua<span class="text-danger">*</span></label>
-            <input type="text" class="form-control @error('nomor_hp_ortu') is-invalid @enderror" id="nomor_hp_ortu"
+            <input type="number" class="form-control @error('nomor_hp_ortu') is-invalid @enderror" id="nomor_hp_ortu"
               name="nomor_hp_ortu" autocomplete="off" required>
             <small class="form-text text-muted">ex: <span class="text-dark">08123456789</span></small>
           </div>

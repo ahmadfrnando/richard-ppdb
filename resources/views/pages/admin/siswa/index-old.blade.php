@@ -41,7 +41,7 @@
             <td>{{ $data->nisn }}</td>
             <td>{{ $data->nama }}</td>
             <td>{{ $data->pin }}</td>
-            <td><span class="badge badge-{{ $data->status == 1 ? 'danger' : 'success' }}">{{ $data->status == 1 ? 'Belum dikonfirmasi' : 'Sudah dikonfirmasi' }}</span></td>
+            <td><span class="badge badge-{{ $data->status ? 'success' : 'danger' }}">{{ $data->status == 1 ? 'Belum dikofirmasi' : 'Sudah dikonfirmasi' }}</span></td>
             <!-- <td>
               @if($data->status)
               <a href="#modal__status" data-toggle="modal"
@@ -60,8 +60,9 @@
               @endif
             </td> -->
             <td>
-              <a href="/detail/bukti-pendaftaran/{{ $data->id }}" target="_blank"
-                class="btn btn-warning mr-2 mb-2">Unduh</a>
+              <a href="#modal__print" data-toggle="modal"
+                onclick="$('#modal__print #form__print').attr('action', '/bukti-pendaftaran/{{ $data->id }}')"
+                class="btn btn-warning mr-2 mb-2">Cetak</a>
               <div class="dropdown d-inline mr-2">
                 <button class="btn btn-primary dropdown-toggle mb-2" type="button" id="dropdownMenuButton"
                   data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">

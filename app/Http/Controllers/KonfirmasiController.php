@@ -10,16 +10,16 @@ class KonfirmasiController extends Controller
 {
     public function index()
     {
-        $konfirmasi =  Konfirmasi::orderBy('id', 'DESC')->get();
+        $konfirmasi =  Siswa::where('status', 1)->orderBy('id', 'DESC')->get();
 
         return view('pages/admin/konfirmasi/index', compact('konfirmasi'));
     }
 
     public function detail($id)
     {
-        $konfirmasi =  Konfirmasi::find($id);
+        $konfirmasi =  Siswa::find($id);
 
-        $siswa = Siswa::find($konfirmasi->siswa_id);
+        $siswa = Siswa::find($konfirmasi->id);
 
         return view('pages/admin/konfirmasi/detail', compact('konfirmasi', 'siswa'));
     }

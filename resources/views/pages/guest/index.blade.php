@@ -122,15 +122,11 @@
       <div class="col-12 text-center">
         <h2 class="section-title">Galeri</h2>
       </div>
+      @foreach($galeri as $data)
       <div class="col-md-4 mb-4 d-flex justify-content-center">
-        <img src="{{ asset('images/foto4.jpeg') }}" loading="lazy" class=" shadow-sm mx-auto" alt="Galeri 1" style="border-radius: 10px; max-height: 300px; object-fit: cover;">
+        <img src="{{ asset('images/' . $data->foto) }}" loading="lazy" class=" shadow-sm mx-auto" alt="Galeri 1" style="border-radius: 10px; max-height: 300px; object-fit: cover;">
       </div>
-      <div class="col-md-4 mb-4 d-flex justify-content-center">
-        <img src="{{ asset('images/foto5.jpeg') }}" loading="lazy" class="img-fluid shadow-sm" alt="Galeri 2" style="border-radius: 10px; max-height: 300px; object-fit: cover;">
-      </div>
-      <div class="col-md-4 mb-4 d-flex justify-content-center">
-        <img src="{{ asset('images/foto6.jpeg') }}" loading="lazy" class="img-fluid shadow-sm" alt="Galeri 3" style="border-radius: 10px; max-height: 300px; object-fit: cover;">
-      </div>
+      @endforeach
       <div class="col-12 text-center mt-3">
         <a href="/galeri" class="btn btn-primary px-5 py-2" style="border-radius: 50px; font-weight: bold;">Lihat Semua Galeri</a>
       </div>

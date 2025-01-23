@@ -22,7 +22,7 @@
       </li>
     </ul>
     <div class="d-none align-items-center d-md-flex">
-    <a href="/beranda" class="text-light font-weight-normal mx-2">
+    <a href="/" class="text-light font-weight-normal mx-2">
       Beranda
     </a>
       <a href="#" class="text-light font-weight-normal pl-2" data-toggle="modal" data-target="#modal_kontak">
@@ -33,7 +33,7 @@
 </nav>
 <div class="bg-success d-block py-2 d-md-none">
   <div class="container-lg d-flex justify-content-center align-items-center">
-    <a href="/beranda" class="text-light font-weight-normal mx-2">
+    <a href="/" class="text-light font-weight-normal mx-2">
       Beranda
     </a>
     <div class="dropdown">

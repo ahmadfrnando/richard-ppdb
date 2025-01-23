@@ -56,40 +56,6 @@
     color: #555;
   }
 </style>
-<?php
-$galeri = [
-  [
-    'id' => 1,
-    'judul' => 'Galeri 1',
-    'foto' => 'images/foto1.jpeg'
-  ],
-  [
-    'id' => 2,
-    'judul' => 'Galeri 2',
-    'foto' => 'images/foto2.jpeg'
-  ],
-  [
-    'id' => 3,
-    'judul' => 'Galeri 3',
-    'foto' => 'images/foto3.jpeg'
-  ],
-  [
-    'id' => 4,
-    'judul' => 'Galeri 4',
-    'foto' => 'images/foto4.jpeg'
-  ],
-  [
-    'id' => 5,
-    'judul' => 'Galeri 5',
-    'foto' => 'images/foto5.jpeg'
-  ],
-  [
-    'id' => 6,
-    'judul' => 'Galeri 6',
-    'foto' => 'images/foto6.jpeg'
-  ],
-]
-?>
 
 <main style="margin-bottom: 200px">
   <div class="hero-section">
@@ -100,8 +66,8 @@ $galeri = [
       <div class="row">
         @foreach ($galeri as $item)
         <div class="col-md-4 gallery-item">
-          <img src="{{ $item['foto'] }}" alt="{{ $item['judul'] }}" loading="lazy">
-          <div class="gallery-item-title">{{ $item['judul'] }}</div>
+          <img src="{{ asset('images/'. $item->foto) }}" alt="{{ $item->judul }}" loading="lazy">
+          <div class="gallery-item-title">{{ $item->judul }}</div>
         </div>
         @endforeach
       </div>

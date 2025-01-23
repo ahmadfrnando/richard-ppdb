@@ -3,13 +3,15 @@
 namespace App\Http\Controllers\Guest;
 
 use App\Http\Controllers\Controller;
+use App\Models\Gallery;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
 {
     public function index()
-    {
-        return view('pages.guest.index');
+    {   
+        $galeri = Gallery::all();
+        return view('pages.guest.index', compact('galeri'));
     }
 
     public function profil()
@@ -32,8 +34,9 @@ class HomeController extends Controller
         return view('pages.guest.fasilitas');
     }
     public function galeri()
-    {
-        return view('pages.guest.galeri');
+    {   
+        $galeri = Gallery::all();
+        return view('pages.guest.galeri', compact('galeri'));
     }
 
 }
