@@ -42,6 +42,7 @@
         </thead>
         <tbody>
           <?php $count = 1; ?>
+          @if(count($galeri) > 0)
           @foreach ($galeri as $data)
           <tr>
             <th scope="row">{{ $count }}</th>
@@ -70,6 +71,7 @@
           </tr>
           <?php $count++ ?>
           @endforeach
+          @endif
         </tbody>
       </table>
     </div>
