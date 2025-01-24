@@ -54,14 +54,14 @@
               </tr>
             </thead>
             <tbody>
-              @foreach($data as $key => $siswa)
+              @foreach($siswa as $key => $siswa)
               <tr>
                 <th scope="row">{{ $loop->index + 1 }}</th>
                 <td>{{ $siswa->nama }}</td>
                 <td>
                   <div class="progress" data-height="4" data-toggle="tooltip" title="" data-original-title="100%"
                     style="height: 4px;">
-                    <div class="progress-bar bg-success" data-width="{{ $siswa->status / 3 * 100 }}" style="width: 100px;"></div>
+                    <div class="progress-bar bg-success" data-width="{{ $siswa->status == 1 ? 33 : 66 }}%" style="width: {{ $siswa->status == 1 ? 33 : 66 }}%"></div>
                   </div>
                 </td>
                 <td><a href="#" data-toggle="modal"

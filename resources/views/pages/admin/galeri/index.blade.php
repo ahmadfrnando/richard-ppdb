@@ -42,30 +42,17 @@
         </thead>
         <tbody>
           @if(count($galeri) > 0)
-          @foreach ($galeri as $data => $data)
+          @foreach ($galeri as $key => $item)
           <tr>
-            <th scope="row">{{ $count }}</th>
-            <td>{{ substr( $data->judul, 0, 20) }} ...</td>
-            <td><img src="{{ asset('images/'.$data->foto) }}" width="100" height="100" alt="{{ $data->judul }}"></td>
+            <th scope="row">{{ $key + 1 }}</th> <!-- Indeks -->
+            <td>{{ substr($item->judul, 0, 20) }} ...</td> <!-- Properti judul -->
+            <td><img src="{{ asset('storage/'.$item->foto) }}" width="100" height="100" alt="{{ $item->judul }}"></td>
             <td>
+              <!-- Aksi -->
               <a href="#modal__detail" data-toggle="modal"
-                onclick="$('#modal__detail #judul').text('{{ $data->judul }}');$('#modal__detail #deskripsi').text('{{ $data->judul }}');$('#modal__detail #tanggal').text('{{ $data->created_at }}');"
+                onclick="$('#modal__detail #judul').text('{{ $item->judul }}');$('#modal__detail #tanggal').text('{{ $item->created_at }}');"
                 class="btn btn-info mr-2 mb-2">Detail</a>
-              <div class="dropdown d-inline mr-2">
-                <button class="btn btn-primary dropdown-toggle mb-2" type="button" id="dropdownMenuButton"
-                  data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                  Lainya
-                </button>
-                <div class="dropdown-menu mr-2" x-placement="bottom-start"
-                  style="position: absolute; transform: translate3d(0px, 28px, 0px); top: 0px; left: 0px; will-change: transform;">
-                  <a href="#modal__edit" data-toggle="modal"
-                    onclick="$('#modal__edit #form__edit').attr('action', '/admin/galeri/{{ $data->id }}/update');$('#modal__edit #form__edit #judul').attr('value', '{{ $data->judul }}');$('#modal__edit #form__edit #deskripsi').text('{{ $data->judul }}');"
-                    class="dropdown-item text-warning font-weight-bolder">Ubah</a>
-                  <a href="#modal__delete" data-toggle="modal"
-                    onclick="$('#modal__delete #form__delete').attr('action', '/admin/galeri/{{ $data->id }}/destroy')"
-                    class="dropdown-item text-danger font-weight-bolder">Hapus</a>
-                </div>
-              </div>
+              <!-- Tombol lainnya -->
             </td>
           </tr>
           @endforeach
@@ -89,7 +76,7 @@
   aria-labelledby="staticBackdropLabel" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
-      <form action="{{ route('admin.galeri.store') }}" method="post">
+      <form method="POST" enctype="multipart/form-data" action="{{ route('admin.galeri.store') }}">
         @csrf
         <div class="modal-header">
           <h5 class="modal-title" id="staticBackdropLabel">Tambah Galeri</h5>
@@ -98,26 +85,33 @@
           </button>
         </div>
         <div class="modal-body">
-          <div class="form-group">
+          <div class="form-group mb-3">
             <label for="judul">Judul</label>
             <input type="text" required class="form-control @error('judul') is-invalid @enderror" id="judul"
-              name="judul">
+              name="judul" placeholder="Masukkan judul di sini">
             @error('judul')
             <div class="invalid-feedback">
-              {{ $message}}
+              {{ $message }}
             </div>
             @enderror
           </div>
-          <div class="form-group">
-            <label for="deskripsi">Foto</label>
-            <img src="{{ asset($data->foto ?? '') }}" alt="">
+          <div class="form-group mb-3">
+            <label for="foto">Foto</label>
+            <input type="file" required class="form-control @error('foto') is-invalid @enderror" id="foto"
+              name="foto" accept="image/*">
+            @error('foto')
+            <div class="invalid-feedback">
+              {{ $message }}
+            </div>
+            @enderror
           </div>
         </div>
         <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-dismiss="modal">Kembali</button>
           <button type="submit" class="btn btn-primary">Simpan</button>
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Kembali</button>
         </div>
       </form>
+
     </div>
   </div>
 </div>

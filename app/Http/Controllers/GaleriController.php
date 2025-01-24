@@ -23,10 +23,7 @@ class GaleriController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
-    {
-        //
-    }
+    public function create() {}
 
     /**
      * Store a newly created resource in storage.
@@ -36,8 +33,28 @@ class GaleriController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        // Validasi input
+        $request->validate([
+            'judul' => 'required|string|max:255',
+            'foto' => 'required|image|mimes:jpg,jpeg,png|max:2048',
+        ]);
+
+        // Tambahkan debug untuk memastikan validasi lolos
+        // dd($request->all());
+
+        // Simpan file ke direktori 'images/galeri' di storage/public
+        $filePath = $request->file('foto')->store('images/galeri', 'public');
+
+        // Simpan data ke database
+        $galeri = new Gallery();
+        $galeri->judul = $request->judul;
+        $galeri->foto = $filePath; // Simpan path file
+        $galeri->save();
+
+        // Redirect dengan pesan sukses
+        return redirect()->route('admin.galeri')->with('success', 'Galeri berhasil ditambahkan');
     }
+
 
     /**
      * Display the specified resource.
