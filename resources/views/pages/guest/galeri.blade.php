@@ -66,7 +66,7 @@
       <div class="row">
         @foreach ($galeri as $item)
         <div class="col-md-4 gallery-item">
-          <img src="{{ asset('images/'. $item->foto) }}" alt="{{ $item->judul }}" loading="lazy">
+          <img src="{{ asset('storage/'. $item->foto) }}" alt="{{ $item->judul }}" loading="lazy">
           <div class="gallery-item-title">{{ $item->judul }}</div>
         </div>
         @endforeach
