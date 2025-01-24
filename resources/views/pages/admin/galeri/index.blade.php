@@ -41,9 +41,8 @@
           </tr>
         </thead>
         <tbody>
-          <?php $count = 1; ?>
           @if(count($galeri) > 0)
-          @foreach ($galeri as $data)
+          @foreach ($galeri as $data => $data)
           <tr>
             <th scope="row">{{ $count }}</th>
             <td>{{ substr( $data->judul, 0, 20) }} ...</td>
@@ -69,8 +68,11 @@
               </div>
             </td>
           </tr>
-          <?php $count++ ?>
           @endforeach
+          @else
+          <tr>
+            <th colspan="4" scope="row" class="text-center">Data tidak ditemukan</th>
+          </tr>
           @endif
         </tbody>
       </table>
@@ -108,7 +110,7 @@
           </div>
           <div class="form-group">
             <label for="deskripsi">Foto</label>
-            <img src="{{ asset($data->foto) }}" alt="">
+            <img src="{{ asset($data->foto ?? '') }}" alt="">
           </div>
         </div>
         <div class="modal-footer">
