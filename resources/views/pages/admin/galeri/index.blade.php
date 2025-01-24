@@ -9,7 +9,7 @@
     <div class="col-12 col-sm-6 p-0 mb-2">
       <div class="d-flex align-items-start">
         <a href="#modal__create" data-toggle="modal" class="btn btn-primary mr-2">
-          Tambah Galeri
+          Tambah Foto
         </a>
       </div>
     </div>
