@@ -17,7 +17,7 @@
       <div class="col-12 col-lg-9 px-0 px-md-3 py-2">
         <div class="mb-md-3 px-3 px-md-5 py-4 py-md-5 bg-primary shadow-sm">
           <h4 class="text-white mb-0">Formulir Pendaftaran PPDB</h4>
-          <h4 class="text-white">SMA Swasta Katolik Marina</h4>
+          <h4 class="text-white">SMA Swasta Katolik Mariana</h4>
           <h6 class="text-white font-weight-normal">TAHUN PELAJARAN 2024/2025</h6>
         </div>
         <div class="mb-3 px-3 px-md-5 py-4 py-md-5 bg-light shadow-sm">

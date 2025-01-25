@@ -100,7 +100,7 @@
 <main style="margin-bottom: 200px">
   <div class="jumbotron jumbotron-fluid">
     <div class="container">
-      <h1 class="display-4 text-light">Selamat Datang di <span class="text-primary">SMA Swasta Katolik Marina</span></h1>
+      <h1 class="display-4 text-light">Selamat Datang di <span class="text-primary">SMA Swasta Katolik Mariana</span></h1>
       <p class="lead text-light">Mencetak Generasi Unggul dan Siap Kerja</p>
       <a href="/pendaftaran">
         <button type="button" class="btn cta-btn">Daftar Sekarang</button>
@@ -112,7 +112,7 @@
     <div class="row justify-content-center align-items-center text-center mb-5">
       <div class="col-md-8">
         <h1 class="display-4 mb-3 font-weight-bold">Tentang Kami</h1>
-        <p class="lead mb-4" style="font-size: 1.25rem; line-height: 1.8;">SMA Swasta Marina adalah lembaga pendidikan yang berkomitmen untuk mencetak lulusan yang berkualitas dan siap bersaing di dunia kerja. Kami menawarkan berbagai program studi yang relevan dengan kebutuhan industri.</p>
+        <p class="lead mb-4" style="font-size: 1.25rem; line-height: 1.8;">SMA Swasta Mariana adalah lembaga pendidikan yang berkomitmen untuk mencetak lulusan yang berkualitas dan siap bersaing di dunia kerja. Kami menawarkan berbagai program studi yang relevan dengan kebutuhan industri.</p>
         <a href="/profil" class="btn btn-light btn-lg px-5 py-3" style="border-radius: 50px; font-weight: bold;">Selengkapnya</a>
       </div>
     </div>
@@ -167,7 +167,7 @@
             <h5 class="card-title">Hubungi Kami</h5>
             <p class="card-text">Jika Anda memiliki pertanyaan atau ingin mendapatkan informasi lebih lanjut, silakan hubungi kami melalui:</p>
             <ul class="list-unstyled">
-              <li><i class="fas fa-envelope"></i> Email: <a href="mailto:info@smamarina.sch.id">info@smamarina.sch.id</a></li>
+              <li><i class="fas fa-envelope"></i> Email: <a href="mailto:info@smamariana.sch.id">info@smaariana.sch.id</a></li>
               <li><i class="fas fa-phone"></i> Telepon: (021) 123-4567</li>
               <li><i class="fas fa-map-marker-alt"></i> Alamat: Jl. Pendidikan No. 1, Jakarta</li>
             </ul>

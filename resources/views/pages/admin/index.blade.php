@@ -64,7 +64,7 @@
                     <div class="progress-bar bg-success" data-width="{{ $siswa->status == 1 ? 33 : 66 }}%" style="width: {{ $siswa->status == 1 ? 33 : 66 }}%"></div>
                   </div>
                 </td>
-                <td><a href="#" data-toggle="modal"
+                <td><a href="/detail/bukti-pendaftaran/{{ $siswa->id }}"
                     class="btn btn-warning mr-2 mb-2">Detail</a></td>
               </tr>
               @endforeach

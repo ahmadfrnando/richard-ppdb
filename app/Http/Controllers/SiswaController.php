@@ -7,6 +7,7 @@ use App\Models\User;
 use Illuminate\Http\Request;
 use Maatwebsite\Excel\Facades\Excel;
 use App\Exports\SiswaExport;
+use App\Models\Pesan;
 
 class SiswaController extends Controller
 {
@@ -96,19 +97,24 @@ class SiswaController extends Controller
         return redirect()->route('admin.siswa')->with('success', 'Pendaftar berhasil ditambahkan');
     }
 
-    public function status($id)
+    public function status(Request $request, $id)
     {
-        $siswa = Siswa::find($id);
+        $siswa = Siswa::findOrFail($id);
+        $status = $request->input('status');
+        $pesan = new Pesan();
 
-        if ($siswa->status == 1) {
-            $siswa->update([
-                'status' => 2
-            ]);
-        } else {
-            $siswa->update([
-                'status' => 1
-            ]);
+        if ($status == 2) {
+            $siswa->update(['status' => 2]);
+            $pesan->judul = 'Informasi Pendaftar';
+            $pesan->isi = "Selamat {$siswa->nama} dengan NISN {$siswa->nisn}, anda telah lulus seleksi pendaftaran, silahkan tunggu informasi selanjutnya untuk pendaftaran ulang dari kami.";
+        } elseif ($status == 3) {
+            $siswa->update(['status' => 3]);
+            $pesan->judul = 'Informasi Pendaftar';
+            $pesan->isi = "Maaf {$siswa->nama} dengan NISN {$siswa->nisn}, anda tidak lulus seleksi pendaftaran, silahkan tunggu informasi selanjutnya untuk pendaftaran ulang dari kami.";
         }
+
+        $pesan->id_siswa = $id;
+        $pesan->save();
 
         return redirect()->route('admin.siswa')->with('success', 'Status Pendaftar berhasil diperbarui');
     }

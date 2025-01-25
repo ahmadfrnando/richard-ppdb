@@ -55,12 +55,19 @@
                 <i class="fas fa-circle text-white mr-2" style="font-size: 0.6rem;"></i>
                 <span>Sudah dikonfirmasi</span>
               </a>
-              @else
+              @elseif($data->status == 1)
               <a href="#modal__status" data-toggle="modal"
                 onclick="$('#modal__status #form__status').attr('action', '/admin/siswa/{{ $data->id }}/status')"
                 class="badge badge-danger mr-2 mb-2">
                 <i class="fas fa-circle text-white mr-2" style="font-size: 0.6rem;"></i>
                 <span>Belum dikonfirmasi</span>
+              </a>
+              @elseif($data->status == 3)
+              <a href="#modal__status" data-toggle="modal"
+                onclick="$('#modal__status #form__status').attr('action', '/admin/siswa/{{ $data->id }}/status')"
+                class="badge badge-danger mr-2 mb-2">
+                <i class="fas fa-circle text-white mr-2" style="font-size: 0.6rem;"></i>
+                <span>Butuh Klarifikasi Data</span>
               </a>
               @endif
             </td>
@@ -93,7 +100,8 @@
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-secondary ml-2" data-dismiss="modal">Kembali</button>
-          <button type="submit" class="btn btn-primary ml-2">Lanjutkan</button>
+          <button type="submit" value="2" name="status" class="btn btn-primary ml-2">Terima</button>
+          <button type="submit" value="3" name="status" class="btn btn-primary ml-2">Tolak</button>
         </div>
       </form>
     </div>

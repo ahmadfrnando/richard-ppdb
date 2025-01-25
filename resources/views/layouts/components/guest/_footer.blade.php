@@ -1,7 +1,7 @@
 <footer class="bg-primary py-4 fixed-bottom" style="">
   <div class="container-lg">
       <div class="col-md-4 mb-4 text-center text-md-left">
-        <p class="text-light">&copy; 2025 SMA Swasta Marina. Semua hak cipta dilindungi.</p>
+        <p class="text-light">&copy; 2025 SMA Swasta Mariana. Semua hak cipta dilindungi.</p>
       </div>
   </div>
 </footer>

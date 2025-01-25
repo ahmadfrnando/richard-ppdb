@@ -91,7 +91,7 @@ class PendaftaranController extends Controller
             'nilai_ijazah' => $request->nilai_ijazah,
             'rata_rata_ijazah' => $request->rata_rata_ijazah,
             'pin' => $pin,
-            'status' => false,
+            'status' => 1,
             'user_id' => $user->id,
         ]);
 
