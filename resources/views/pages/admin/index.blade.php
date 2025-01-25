@@ -61,10 +61,14 @@
                 <td>
                   <div class="progress" data-height="4" data-toggle="tooltip" title="" data-original-title="100%"
                     style="height: 4px;">
-                    <div class="progress-bar bg-success" data-width="{{ $siswa->status == 1 ? 33 : 66 }}%" style="width: {{ $siswa->status == 1 ? 33 : 66 }}%"></div>
+                    @if($siswa->status == 2)
+                    <div class="progress-bar bg-success" data-width="100%" style="width: 100%"></div>
+                    @else
+                    <div class="progress-bar bg-success" data-width="50%" style="width: 50%"></div>
+                    @endif
                   </div>
                 </td>
-                <td><a href="/detail/bukti-pendaftaran/{{ $siswa->id }}"
+                <td><a href="/admin/detail/siswa/{{ $siswa->id }}"
                     class="btn btn-warning mr-2 mb-2">Detail</a></td>
               </tr>
               @endforeach

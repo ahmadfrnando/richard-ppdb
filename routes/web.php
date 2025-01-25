@@ -76,6 +76,7 @@ Route::group(['middleware' => ['auth', 'checkRole:siswa']], function () {
 Route::group(['middleware' => ['auth', 'checkRole:admin']], function () {
 
     Route::get('/admin', [DashboardController::class, 'index'])->name('admin');
+    Route::get('/admin/detail/siswa/{id}', [DashboardController::class, 'detailSiswa'])->name('admin.detail.siswa');
 
     Route::get('/admin/siswa', [SiswaController::class, 'index'])->name('admin.siswa');
 

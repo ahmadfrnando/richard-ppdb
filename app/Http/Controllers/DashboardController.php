@@ -22,4 +22,13 @@ class DashboardController extends Controller
 
         return view('pages/admin/index', compact('siswa', 'pengumuman', 'to', 'tm', 'te', 'tkjt', 'pplg', 'data'));
     }
+
+    public function detailSiswa($id)
+    {
+        $siswa = Siswa::find($id);
+        $dataSiswa = Siswa::all();
+        $pengumuman = Pengumuman::all();
+
+        return view('pages/admin/detail', compact('siswa', 'dataSiswa', 'pengumuman'));
+    }
 }
