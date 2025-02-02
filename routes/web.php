@@ -90,7 +90,7 @@ Route::group(['middleware' => ['auth', 'checkRole:admin']], function () {
 
     Route::post('/admin/siswa/store', [SiswaController::class, 'store'])->name('admin.siswa.store');
 
-    Route::get('/admin/siswa/{id}/status', [SiswaController::class, 'status'])->name('admin.siswa.status');
+    Route::post('/admin/siswa/{id}/status', [SiswaController::class, 'status'])->name('admin.siswa.status');
 
     Route::get('/admin/siswa/{id}/ubah', [SiswaController::class, 'ubah'])->name('admin.siswa.ubah');
 

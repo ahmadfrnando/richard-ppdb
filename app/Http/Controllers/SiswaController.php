@@ -100,8 +100,8 @@ class SiswaController extends Controller
     public function status(Request $request, $id)
     {
         $siswa = Siswa::findOrFail($id);
-        $status = $request->input('status');
         $pesan = new Pesan();
+        $status = $request->input('status');
 
         if ($status == 2) {
             $siswa->update(['status' => 2]);
