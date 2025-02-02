@@ -10,7 +10,7 @@ class HomeController extends Controller
 {
     public function index()
     {   
-        $galeri = Gallery::all();
+        $galeri = Gallery::latest()->take(3)->get();
         return view('pages.guest.index', compact('galeri'));
     }
 
@@ -35,7 +35,7 @@ class HomeController extends Controller
     }
     public function galeri()
     {   
-        $galeri = Gallery::latest()->take(3)->get();
+        $galeri = Gallery::paginate(9);
         return view('pages.guest.galeri', compact('galeri'));
     }
 

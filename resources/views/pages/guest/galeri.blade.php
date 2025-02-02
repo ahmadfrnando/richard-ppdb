@@ -63,13 +63,16 @@
   </div>
   <div class="gallery-section">
     <div class="container-lg">
-      <div class="row">
+      <div class="row gap-2">
         @foreach ($galeri as $item)
         <div class="col-md-4 gallery-item">
-          <img src="{{ asset('storage/'. $item->foto) }}" alt="{{ $item->judul }}" loading="lazy">
+          <img src="{{ asset('storage/'. $item->foto) }}" alt="{{ $item->judul }}" loading="lazy" style="max-height: 300px; max-width: 500px ; object-fit: cover;">
           <div class="gallery-item-title">{{ $item->judul }}</div>
         </div>
         @endforeach
+      </div>
+      <div class="d-flex justify-content-center">
+        {{ $galeri->links() }}
       </div>
     </div>
   </div>

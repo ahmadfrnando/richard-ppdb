@@ -101,7 +101,7 @@
   <div class="jumbotron jumbotron-fluid">
     <div class="">
       <h1 class="display-4 text-light">Selamat Datang di <span class="text-primary">SMA Swasta Katolik Mariana</span></h1>
-      <p class="lead text-light">Mencetak Generasi Unggul dan Siap Kerja</p>
+      <p class="lead text-light">Mencetak Generasi Unggul dan Berkarakter</p>
       <a href="/pendaftaran">
         <button type="button" class="btn cta-btn">Daftar Sekarang</button>
       </a>
@@ -123,8 +123,8 @@
         <h2 class="section-title">Galeri</h2>
       </div>
       @foreach($galeri as $data)
-      <div class="col-md-4 mb-4 d-flex justify-content-center">
-        <img src="{{ asset('storage/' . $data->foto) }}" loading="lazy" class=" shadow-sm mx-auto" alt="Galeri 1" style="border-radius: 10px; max-height: 300px; object-fit: cover;">
+      <div class="col-md-4 mb-4 d-flex justify-content-center" style="width: 300px; height: 300px;">
+        <img src="{{ asset('storage/' . $data->foto) }}" loading="lazy" class=" shadow-sm mx-auto" alt="Galeri 1" style="border-radius: 10px; width: 100%; height: 100%; object-fit: cover;">
       </div>
       @endforeach
       <div class="col-12 text-center mt-3">
