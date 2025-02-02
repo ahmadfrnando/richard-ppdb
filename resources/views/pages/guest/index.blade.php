@@ -99,7 +99,7 @@
 
 <main style="margin-bottom: 200px">
   <div class="jumbotron jumbotron-fluid">
-    <div class="container">
+    <div class="">
       <h1 class="display-4 text-light">Selamat Datang di <span class="text-primary">SMA Swasta Katolik Mariana</span></h1>
       <p class="lead text-light">Mencetak Generasi Unggul dan Siap Kerja</p>
       <a href="/pendaftaran">
@@ -124,7 +124,7 @@
       </div>
       @foreach($galeri as $data)
       <div class="col-md-4 mb-4 d-flex justify-content-center">
-        <img src="{{ asset('images/' . $data->foto) }}" loading="lazy" class=" shadow-sm mx-auto" alt="Galeri 1" style="border-radius: 10px; max-height: 300px; object-fit: cover;">
+        <img src="{{ asset('storage/' . $data->foto) }}" loading="lazy" class=" shadow-sm mx-auto" alt="Galeri 1" style="border-radius: 10px; max-height: 300px; object-fit: cover;">
       </div>
       @endforeach
       <div class="col-12 text-center mt-3">

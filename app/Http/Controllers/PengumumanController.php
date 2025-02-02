@@ -17,10 +17,10 @@ class PengumumanController extends Controller
     public function store(Request $request)
     {
         date_default_timezone_set("Asia/Jakarta");
-
         $validator = Validator::make($request->all(), [
             'judul' => 'required',
             'deskripsi' => 'required',
+            'status' => 'required',
         ]);
 
         if ($validator->fails()) {
@@ -30,6 +30,7 @@ class PengumumanController extends Controller
         Pengumuman::create([
             'judul' => $request->judul,
             'deskripsi' => $request->deskripsi,
+            'filter_status' => $request->status
         ]);
 
         return redirect()->route('admin.pengumuman')->with('success', 'Pengumuman berhasil ditambahkan');

@@ -52,6 +52,9 @@
               <a href="#modal__detail" data-toggle="modal"
                 onclick="$('#modal__detail #judul').text('{{ $item->judul }}');$('#modal__detail #tanggal').text('{{ $item->created_at }}');"
                 class="btn btn-info mr-2 mb-2">Detail</a>
+              <a href="#modal__delete" data-toggle="modal"
+                onclick="$('#modal__delete #form__delete').attr('action', '/admin/galeri/{{ $item->id }}/destroy')"
+                class="btn btn-danger mr-2 mb-2">Hapus</a>
               <!-- Tombol lainnya -->
             </td>
           </tr>
@@ -197,7 +200,7 @@
     <div class="modal-content">
       <form id="form__delete" action="" method="get">
         <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLabel">Yakin menghapus pengumuman?</h5>
+          <h5 class="modal-title" id="exampleModalLabel">Yakin menghapus Galeri?</h5>
           <button type="button" class="close" data-dismiss="modal" aria-label="Close">
             <span aria-hidden="true">&times;</span>
           </button>

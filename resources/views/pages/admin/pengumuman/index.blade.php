@@ -116,6 +116,20 @@
             </div>
             @enderror
           </div>
+          <div class="form-group">
+            <label for="status">Status Siswa</label>
+            <select class="form-control @error('status') is-invalid @enderror" id="status" name="status"
+              required>
+              <option value="1">Semua Siswa</option>
+              <option value="2">Siswa lulus</option>
+              <option value="3">Siswa tidak lulus</option>
+            </select>
+            @error('status')
+            <div class="invalid-feedback">
+              {{ $message}}
+            </div>
+            @enderror
+          </div>
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-secondary" data-dismiss="modal">Kembali</button>
