@@ -75,7 +75,7 @@
 
 <body>
     <div class="header">
-        <span class="nama-sekolah">SMA Swasta Katolik Mariana</span>
+        <span class="nama-sekolah uppercase">{{ $dataSekolah->nama_sekolah }}</span>
     </div>
     <div class="container">
         @foreach(['nomor_pendaftaran', 'pin', 'nama', 'nisn', 'jenis_kelamin', 'tempat_lahir', 'tanggal_lahir', 'agama', 'alamat', 'nomor_hp', 'nama_ayah', 'umur_ayah', 'pendidikan_ayah', 'pekerjaan_ayah', 'nama_ibu', 'umur_ibu', 'pendidikan_ibu', 'pekerjaan_ibu', 'nomor_hp_ortu', 'alamat_orang_tua', 'asal_sekolah', 'nilai_skhu', 'rata_rata_skhu', 'nomor_ijazah', 'nilai_ijazah', 'rata_rata_ijazah'] as $field)

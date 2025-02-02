@@ -15,7 +15,7 @@
     <div class="col-12 col-md-10 col-lg-8 p-0">
       <div class="alert alert-info py-3" role="alert">
         <h4 class="alert-heading text-dark">Selamat Datang, {{ $siswa->nama }} !</h4>
-        <p>Terima kasih telah mendaftar di SMA Swasta Katolik Mariana, silahkan tunggu konfirmasi dari admin untuk berkas pendaftaran anda. Cek pengumuman untuk informasi lebih lanjut.</p>
+        <p>Terima kasih telah mendaftar di {{ $dataSekolah->nama_sekolah }}, silahkan tunggu konfirmasi dari admin untuk berkas pendaftaran anda. Cek pengumuman untuk informasi lebih lanjut.</p>
         <hr>
         <p class="mb-0">Pastikan anda sudah mengunduh bukti pendaftaran anda.</p>
       </div>

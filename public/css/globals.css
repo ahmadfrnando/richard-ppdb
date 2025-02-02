@@ -94,7 +94,10 @@ a {
 }
 
 /* ADD */
-
+.uppercase {
+    text-transform: uppercase !important; 
+  }
+  
 .font-weight-medium {
     font-weight: 500;
 }

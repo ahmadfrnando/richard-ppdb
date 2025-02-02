@@ -40,7 +40,7 @@
         <div class="mb-3 px-3 px-md-5 py-4 py-md-5 bg-light shadow-sm">
           <div class="mb-4">
             <h4 class="text-success">Terima kasih telah mendaftar ✨</h4>
-            <h6 class="text-success">PPDB SMA SWASTA KATOLIK MARIANA</h6>
+            <h6 class="text-success uppercase">PPDB {{ $dataSekolah->nama_sekolah }}</h6>
             <div class="row mt-4">
               <div class="col-12 col-md-6">
                 <div class="">

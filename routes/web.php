@@ -10,6 +10,7 @@ use App\Http\Controllers\GaleriController;
 use App\Http\Controllers\KonfirmasiController;
 use App\Http\Controllers\PengumumanController;
 use App\Http\Controllers\SiswaController;
+use App\Models\Kontak;
 
 /*
 |--------------------------------------------------------------------------
@@ -76,6 +77,11 @@ Route::group(['middleware' => ['auth', 'checkRole:siswa']], function () {
 Route::group(['middleware' => ['auth', 'checkRole:admin']], function () {
 
     Route::get('/admin', [DashboardController::class, 'index'])->name('admin');
+
+    Route::get('/admin/kontak', [DashboardController::class, 'kontak'])->name('admin.kontak');
+
+    Route::post('/admin/kontak/update', [DashboardController::class, 'updateKontak'])->name('admin.kontak.update');
+
     Route::get('/admin/detail/siswa/{id}', [DashboardController::class, 'detailSiswa'])->name('admin.detail.siswa');
 
     Route::get('/admin/siswa', [SiswaController::class, 'index'])->name('admin.siswa');

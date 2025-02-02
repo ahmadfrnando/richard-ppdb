@@ -16,6 +16,10 @@
   text-rendering: auto;
   line-height: 1; }
 
+  .uppercase {
+    text-transform: uppercase !important; 
+  }
+
 .fa-lg {
   font-size: 1.33333em;
   line-height: 0.75em;

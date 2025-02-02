@@ -31,13 +31,13 @@
           <div class="d-flex justify-content-center mb-3">
             <div class="d-flex align-items-center">
               <i class="fab fa-whatsapp mr-3" style="font-size: 2rem; color: #2EB943"></i>
-              <h5 class="mb-0 font-weight-medium">0813 2953 6524</h5>
+              <h5 class="mb-0 font-weight-medium">{{ $dataSekolah->no_wa }}</h5>
             </div>
           </div>
           <div class="d-flex justify-content-center mb-3">
             <div class="d-flex align-items-center">
               <i class="fas fa-phone mr-3" style="font-size: 1.6rem;"></i>
-              <h5 class="mb-0 font-weight-medium">0813 2953 6524</h5>
+              <h5 class="mb-0 font-weight-medium">{{ $dataSekolah->no_telp }}</h5>
             </div>
           </div>
         </div>

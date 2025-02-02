@@ -1758,6 +1758,10 @@ h6 .badge {
   margin-top: -1px;
   font-size: 13px; }
 
+  .uppercase {
+    text-transform: uppercase !important; 
+  }
+
 .dropdown-menu {
   box-shadow: 0 10px 40px 0 rgba(51, 73, 94, 0.15);
   border: none;

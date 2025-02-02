@@ -100,7 +100,7 @@
 <main style="margin-bottom: 200px">
   <div class="jumbotron jumbotron-fluid">
     <div class="">
-      <h1 class="display-4 text-light">Selamat Datang di <span class="text-primary">SMA Swasta Katolik Mariana</span></h1>
+      <h1 class="display-4 text-light">Selamat Datang di <span class="text-primary uppercase">{{ $dataSekolah->nama_sekolah }}</span></h1>
       <p class="lead text-light">Mencetak Generasi Unggul dan Berkarakter</p>
       <a href="/pendaftaran">
         <button type="button" class="btn cta-btn">Daftar Sekarang</button>
@@ -167,9 +167,9 @@
             <h5 class="card-title">Hubungi Kami</h5>
             <p class="card-text">Jika Anda memiliki pertanyaan atau ingin mendapatkan informasi lebih lanjut, silakan hubungi kami melalui:</p>
             <ul class="list-unstyled">
-              <li><i class="fas fa-envelope"></i> Email: <a href="mailto:info@smamariana.sch.id">info@smaariana.sch.id</a></li>
-              <li><i class="fas fa-phone"></i> Telepon: (021) 123-4567</li>
-              <li><i class="fas fa-map-marker-alt"></i> Alamat: Jl. Pendidikan No. 1, Jakarta</li>
+              <li><i class="fas fa-envelope"></i> Email: <a href="mailto:{{ $dataSekolah->email }}">{{ $dataSekolah->email }}</a></li>
+              <li><i class="fas fa-phone"></i> Telepon: {{ $dataSekolah->no_telp }}</li>
+              <li><i class="fas fa-map-marker-alt"></i> Alamat: {{ $dataSekolah->alamat }}</li>
             </ul>
           </div>
         </div>
@@ -180,7 +180,7 @@
             <h5 class="card-title">Lokasi Kami</h5>
             <p class="card-text">Kunjungi kami di lokasi yang strategis dan mudah dijangkau. Kami siap menyambut Anda!</p>
             <div class="text-center">
-              <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d31855.886777020496!2d98.63875930350879!3d3.5907205106677202!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x30312e16684e739b%3A0x8b5249edcebbe4dc!2sYayasan%20Pendidikan%20Katolik%20Mariana!5e0!3m2!1sid!2sid!4v1736655308051!5m2!1sid!2sid" width="100%" height="250" style="border:0; border-radius: 10px;" allowfullscreen="" loading="lazy"></iframe>
+              <iframe src="{{ $dataSekolah->kordinat_maps }}" width="100%" height="250" style="border:0; border-radius: 10px;" allowfullscreen="" loading="lazy"></iframe>
             </div>
           </div>
         </div>

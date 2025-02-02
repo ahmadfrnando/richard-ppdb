@@ -35,6 +35,9 @@
               <div class="d-sm-none d-lg-inline-block">Hi, Admin</div>
             </a>
             <div class="dropdown-menu dropdown-menu-right">
+              <a href="{{ route('admin.kontak') }}" class="dropdown-item has-icon text-success">
+                <i class="fas fa-info"></i> Informasi Sekolah
+              </a>
               <a href="{{ route('logout') }}" class="dropdown-item has-icon text-danger">
                 <i class="fas fa-sign-out-alt"></i> Logout
               </a>
@@ -97,12 +100,11 @@
       </div>
       <footer class="main-footer">
         <div class="footer-left">
-          Jurnal - SMA SWASTA KATOLIK MARIANA
+          <span class="text-muted uppercase">Copyright &copy; {{ $dataSekolah->nama_sekolah }}</span>
         </div>
       </footer>
     </div>
   </div>
-
   @yield('modal')
 
   <script src="{{ asset('/js/jquery-3.3.1.min.js') }}"></script>
@@ -121,22 +123,22 @@
   <script src="{{ asset('/js/bootstrap-multiselect.js')}}"></script>
   <script src="{{ asset('/js/chart.js')}}"></script>
   <script>
-    $(document).ready(function(){
-        $('.data').DataTable();
+    $(document).ready(function() {
+      $('.data').DataTable();
 
-        $(".datepicker").datepicker({
-                format: "yyyy-mm-dd",
-                autoclose: true,
-                todayHighlight: true,
-                orientation: "bottom auto"
-        });
+      $(".datepicker").datepicker({
+        format: "yyyy-mm-dd",
+        autoclose: true,
+        todayHighlight: true,
+        orientation: "bottom auto"
+      });
 
-        $('.multi-select').multiselect({
-            enableClickableOptGroups: true,
-            enableCollapsibleOptGroups: true,
-            enableFiltering: true,
-            includeSelectAllOption: true
-        });
+      $('.multi-select').multiselect({
+        enableClickableOptGroups: true,
+        enableCollapsibleOptGroups: true,
+        enableFiltering: true,
+        includeSelectAllOption: true
+      });
     });
   </script>
 
