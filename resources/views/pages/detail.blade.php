@@ -54,8 +54,8 @@
               </div>
               <div class="col-12 col-md-6">
                 <div class="">
-                  <label class="mb-0">Jurusan: </label>
-                  <p class="font-weight-medium">{{ $siswa->jurusan }}</p>
+                  <label class="mb-0">PIN: </label>
+                  <p class="font-weight-medium">{{ $siswa->pin }}</p>
                 </div>
               </div>
             </div>
