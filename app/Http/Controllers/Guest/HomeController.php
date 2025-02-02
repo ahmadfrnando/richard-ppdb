@@ -35,7 +35,7 @@ class HomeController extends Controller
     }
     public function galeri()
     {   
-        $galeri = Gallery::all();
+        $galeri = Gallery::latest()->take(3)->get();
         return view('pages.guest.galeri', compact('galeri'));
     }
 
