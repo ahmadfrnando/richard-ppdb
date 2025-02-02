@@ -25,7 +25,7 @@ class SiswaController extends Controller
     {
         $user_id = auth()->user()->id;
         $siswa = Siswa::where('user_id', $user_id)->first();
-        $pengumuman = Pengumuman::all();
+        $pengumuman = Pengumuman::where('filter_status', $siswa->status)->get();
         $pesan = Pesan::where('id_siswa', $siswa->id)->get();
 
         return view('pages/siswa/pengumuman', compact('pengumuman', 'pesan'));
