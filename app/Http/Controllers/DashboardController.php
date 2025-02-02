@@ -37,6 +37,7 @@ class DashboardController extends Controller
     {   
         try {
             $request->validate([
+                'nama_sekolah' => 'required',
                 'no_telp' => 'required',
                 'no_wa' => 'required',
                 'alamat' => 'required',
@@ -47,7 +48,7 @@ class DashboardController extends Controller
             ]);
     
             $kontak = Kontak::find(1);
-            $kontak->update($request->only(['no_telp', 'no_wa', 'alamat', 'email', 'kordinat_maps', 'jam_buka', 'jam_tutup']));
+            $kontak->update($request->only(['no_telp', 'no_wa', 'alamat', 'email', 'kordinat_maps', 'jam_buka', 'jam_tutup', 'nama_sekolah']));
     
             return redirect()->back()->with('success', 'Kontak berhasil diupdate');
         } catch (\Throwable $th) {

@@ -61,7 +61,7 @@
                 <td>
                   <div class="progress" data-height="4" data-toggle="tooltip" title="" data-original-title="100%"
                     style="height: 4px;">
-                    @if($siswa->status == 2)
+                    @if($siswa->status == 2 || $siswa->status == 3)
                     <div class="progress-bar bg-success" data-width="100%" style="width: 100%"></div>
                     @else
                     <div class="progress-bar bg-success" data-width="50%" style="width: 50%"></div>

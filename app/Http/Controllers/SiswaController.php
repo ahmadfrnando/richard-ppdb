@@ -105,12 +105,12 @@ class SiswaController extends Controller
 
         if ($status == 2) {
             $siswa->update(['status' => 2]);
-            $pesan->judul = 'Informasi Pendaftar';
-            $pesan->isi = "Selamat {$siswa->nama} dengan NISN {$siswa->nisn}, anda telah lulus seleksi pendaftaran, silahkan tunggu informasi selanjutnya untuk pendaftaran ulang dari kami.";
+            $pesan->judul = 'Selamat';
+            $pesan->isi = "Selamat {$siswa->nama} dengan NISN {$siswa->nisn}, data anda telah diverifikasi oleh admin, silahkan tunggu informasi selanjutnya pada menu pengumuman.";
         } elseif ($status == 3) {
             $siswa->update(['status' => 3]);
-            $pesan->judul = 'Informasi Pendaftar';
-            $pesan->isi = "Maaf {$siswa->nama} dengan NISN {$siswa->nisn}, anda tidak lulus seleksi pendaftaran, silahkan tunggu informasi selanjutnya untuk pendaftaran ulang dari kami.";
+            $pesan->judul = 'Maaf';
+            $pesan->isi = "Maaf {$siswa->nama} dengan NISN {$siswa->nisn}, data anda telah diverifikasi, namun Nilai anda tidak mencukupi. Jika ada kekeliruan dalam pengisian data, silahkan bawa berkas asli ke sekolah untuk pengecekan ulang oleh admin. Terima kasih.";
         }
 
         $pesan->id_siswa = $id;
@@ -123,108 +123,70 @@ class SiswaController extends Controller
     {
         $siswa = Siswa::find($id);
 
-        $kejuaraan_nama = [];
-        $kejuaraan_tingkat = [];
-
-        $kejuaraan = explode('|', $siswa->kejuaraan);
-
-        for ($x = 0; $x < 3; $x++) {
-            $array = explode('-', $kejuaraan[$x]);
-
-            array_push($kejuaraan_tingkat, $array[0]);
-            array_push($kejuaraan_nama, $array[1]);
-        }
-
-        return view('/pages/admin/siswa/ubah', compact('siswa', 'kejuaraan_nama', 'kejuaraan_tingkat'));
+        return view('/pages/admin/siswa/ubah', compact('siswa'));
     }
 
     public function update(Request $request, $id)
     {
         date_default_timezone_set("Asia/Jakarta");
 
-        // $request->validate([
-        //     'program_keahlian' => 'required',
-        //     'nama' => 'required',
-        //     'tempat_lahir' => 'required',
-        //     'tanggal_lahir' => 'required',
-        //     'jenis_kelamin' => 'required',
-        //     'alamat' => 'required',
-        //     'kecamatan' => 'required',
-        //     'kabupaten' => 'required',
-        //     'nomer_hp' => 'required',
-        //     'nisn' => 'required',
-        //     'asal_sekolah' => 'required',
-        //     'pendidijkan_ayah' => 'required',
-        //     'pekerjaan_ayah' => 'required',
-        //     'nama_ibu' => 'required',
-        //     'pekerjaan_ibu' => 'required',
-        //     'nomer_hp_ortu' => 'required',
-        //     'alamat_ortu' => 'required',
-        //     'kecamatan_ortu' => 'required',
-        //     'kabupaten_ortu' => 'required',
-        // ]);
-
-        // $nomer_pendaftar = $request->program_keahlian . '-' . rand(1000, 9999);
-
-        $program_keahlian = null;
-
-        if ($request->program_keahlian === 'TO_TSM') {
-            $program_keahlian = 'Teknik Otomotif - TSM';
-        } else if ($request->program_keahlian === 'TO_TKR') {
-            $program_keahlian = 'Teknik Otomotif - TKR';
-        } else if ($request->program_keahlian === 'TM') {
-            $program_keahlian = 'Teknik Mesin';
-        } else if ($request->program_keahlian === 'TE') {
-            $program_keahlian = 'Teknik Elektronika';
-        } else if ($request->program_keahlian === 'TKJT') {
-            $program_keahlian = 'Teknik Komputer Jaringan dan Telekomunikasi';
-        } else if ($request->program_keahlian === 'PPLG') {
-            $program_keahlian = 'Pengembangan Perangkat Lunak dan Gim';
-        }
-        $kejuaraan = '';
-
-        for ($x = 0; $x < 3; $x++) {
-            $kejuaraan_tingkat = $request->kejuaraan_tingkat[$x] ? $request->kejuaraan_tingkat[$x] : ' ';
-
-            $kejuaraan_nama = $request->kejuaraan_nama[$x] ? $request->kejuaraan_nama[$x] : ' ';
-
-            $kejuaraan .=  $kejuaraan_tingkat . '-' . $kejuaraan_nama;
-
-            if ($x < 2) {
-                $kejuaraan .= '|';
-            }
-        }
+        $request->validate([
+            'nama' => 'required',
+            'tempat_lahir' => 'required',
+            'tanggal_lahir' => 'required',
+            'jenis_kelamin' => 'required',
+            'alamat' => 'required',
+            'agama' => 'required',
+            'nisn' => 'required',
+            'nomor_hp' => 'required',
+            'asal_sekolah' => 'required',
+            'nama_ayah' => 'required',
+            'umur_ayah' => 'required',
+            'pendidikan_ayah' => 'required',
+            'pekerjaan_ayah' => 'required',
+            'nama_ibu' => 'required',
+            'umur_ibu' => 'required',
+            'pendidikan_ibu' => 'required',
+            'pekerjaan_ibu' => 'required',
+            'nomor_hp_ortu' => 'required',
+            'alamat_orang_tua' => 'required',
+            'nilai_skhu' => 'required',
+            'rata_rata_skhu' => 'required',
+            'nomor_ijazah' => 'required',
+            'nilai_ijazah' => 'required',
+            'rata_rata_ijazah' => 'required',
+        ]);
 
         $siswa = Siswa::find($id);
 
         $siswa->update([
-            'nomer_pendaftar' => $request->nomer_pendaftar,
-            'program_keahlian' => $program_keahlian,
             'nama' => $request->nama,
             'tempat_lahir' => $request->tempat_lahir,
             'tanggal_lahir' => $request->tanggal_lahir,
             'jenis_kelamin' => $request->jenis_kelamin,
             'alamat' => $request->alamat,
-            'kecamatan' => $request->kecamatan,
-            'kabupaten' => $request->kabupaten,
-            'nomer_hp' => $request->nomer_hp,
+            'agama' => $request->agama,
             'nisn' => $request->nisn,
+            'nomor_hp' => $request->nomor_hp,
             'asal_sekolah' => $request->asal_sekolah,
             'nama_ayah' => $request->nama_ayah,
+            'umur_ayah' => $request->umur_ayah,
+            'pendidikan_ayah' => $request->pendidikan_ayah,
             'pekerjaan_ayah' => $request->pekerjaan_ayah,
             'nama_ibu' => $request->nama_ibu,
+            'umur_ibu' => $request->umur_ibu,
+            'pendidikan_ibu' => $request->pendidikan_ibu,
             'pekerjaan_ibu' => $request->pekerjaan_ibu,
-            'nomer_hp_ortu' => $request->nomer_hp_ortu,
-            'alamat_ortu' => $request->alamat_ortu,
-            'kecamatan_ortu' => $request->kecamatan_ortu,
-            'kabupaten_ortu' => $request->kabupaten_ortu,
-            'hafalan' => $request->hafalan ? $request->hafalan : '-',
-            'lulusan_muh' => $request->lulusan_muh,
-            'saudara' => $request->saudara ? $request->saudara : '-',
-            'kejuaraan' => $kejuaraan,
+            'nomor_hp_ortu' => $request->nomor_hp_ortu,
+            'alamat_orang_tua' => $request->alamat_orang_tua,
+            'nilai_skhu' => $request->nilai_skhu,
+            'rata_rata_skhu' => $request->rata_rata_skhu,
+            'nomor_ijazah' => $request->nomor_ijazah,
+            'nilai_ijazah' => $request->nilai_ijazah,
+            'rata_rata_ijazah' => $request->rata_rata_ijazah,
         ]);
 
-        session(['id_siswa' => $siswa->id]);
+        // session(['id_siswa' => $siswa->id]);
 
         return redirect()->route('admin.siswa')->with('success', 'Pendaftar berhasil diperbarui');
     }

@@ -8,7 +8,7 @@
       </li>
       <li class="nav-item @yield('nav__item-siswa-pengumuman')">
         <a class="nav-link p-0 px-2" href="/siswa/pengumuman">
-          Pengumuman
+          Pengumuman <span class="badge badge-danger font-weight-medium">{{ $pengumumanCount->count() }}</span>
         </a>
       </li>
       <!-- <li class="nav-item @yield('nav__item-siswa-daftar-ulang')">

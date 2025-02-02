@@ -28,7 +28,6 @@
             <th scope="col">No</th>
             <th scope="col">NISN</th>
             <th scope="col">Nama</th>
-            <th scope="col">PIN</th>
             <th scope="col">Status</th>
             <th scope="col">Action</th>
           </tr>
@@ -40,9 +39,8 @@
             <td>{{ $count }}</td>
             <td>{{ $data->nisn }}</td>
             <td>{{ $data->nama }}</td>
-            <td>{{ $data->pin }}</td>
             <!-- <td><span class="badge badge-{{ $data->status == 1 ? 'danger' : 'success' }}">{{ $data->status == 1 ? 'Belum dikonfirmasi' : 'Sudah dikonfirmasi' }}</span></td> -->
-            <td><span class="badge badge-{{ $data->status == 1 ? 'warning' : ($data->status == 2 ? 'success' : 'danger') }}">{{ $data->status == 1 ? 'Belum dikonfirmasi' : ($data->status == 2 ? 'Sudah dikonfirmasi' : 'Butuh Klarifikasi Data') }}</span></td>
+            <td><span class="badge badge-{{ $data->status == 1 ? 'warning' : ($data->status == 2 ? 'success' : 'danger') }}">{{ $data->status == 1 ? 'Belum dikonfirmasi' : ($data->status == 2 ? 'Sudah dikonfirmasi' : 'Nilai tidak mencukupi') }}</span></td>
             <!-- <td>
               @if($data->status)
               <a href="#modal__status" data-toggle="modal"

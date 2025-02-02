@@ -49,9 +49,6 @@
             <td><img src="{{ asset('storage/'.$item->foto) }}" width="100" height="100" alt="{{ $item->judul }}"></td>
             <td>
               <!-- Aksi -->
-              <a href="#modal__detail" data-toggle="modal"
-                onclick="$('#modal__detail #judul').text('{{ $item->judul }}');$('#modal__detail #tanggal').text('{{ $item->created_at }}');"
-                class="btn btn-info mr-2 mb-2">Detail</a>
               <a href="#modal__delete" data-toggle="modal"
                 onclick="$('#modal__delete #form__delete').attr('action', '/admin/galeri/{{ $item->id }}/destroy')"
                 class="btn btn-danger mr-2 mb-2">Hapus</a>
@@ -118,37 +115,6 @@
     </div>
   </div>
 </div>
-
-<!-- Modal Detail -->
-<div class="modal fade" id="modal__detail" data-backdrop="static" data-keyboard="false" tabindex="-1"
-  aria-labelledby="staticBackdropLabel" aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="staticBackdropLabel">Detail Galeri</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-        <div class="media mb-4">
-          <div class="media-body pb-2">
-            <div id="judul" class="media-title mb-1">This is Title</div>
-            <div id="tanggal" class="text-time">Yesterday</div>
-            <div id="deskripsi" class="media-description text-muted">Duis aute irure dolor in reprehenderit in voluptate
-              velit esse
-              cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-              proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</div>
-          </div>
-        </div>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Kembali</button>
-      </div>
-    </div>
-  </div>
-</div>
-
 <!-- Modal Edit -->
 <div class="modal fade" id="modal__edit" data-backdrop="static" data-keyboard="false" tabindex="-1"
   aria-labelledby="staticBackdropLabel" aria-hidden="true">

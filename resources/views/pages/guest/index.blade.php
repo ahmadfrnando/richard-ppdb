@@ -112,7 +112,7 @@
     <div class="row justify-content-center align-items-center text-center mb-5">
       <div class="col-md-8">
         <h1 class="display-4 mb-3 font-weight-bold">Tentang Kami</h1>
-        <p class="lead mb-4" style="font-size: 1.25rem; line-height: 1.8;">SMA Swasta Mariana adalah lembaga pendidikan yang berkomitmen untuk mencetak lulusan yang berkualitas dan siap bersaing di dunia kerja. Kami menawarkan berbagai program studi yang relevan dengan kebutuhan industri.</p>
+        <p class="lead mb-4" style="font-size: 1.25rem; line-height: 1.8;">SMA Swasta Mariana adalah lembaga pendidikan yang berkomitmen untuk mencetak lulusan yang berkualitas dan berkarakter. Kami memfasilitasi semua fasilitas yang dibutuhkan oleh siswa untuk mencapai prestasi akademik.</p>
         <a href="/profil" class="btn btn-light btn-lg px-5 py-3" style="border-radius: 50px; font-weight: bold;">Selengkapnya</a>
       </div>
     </div>

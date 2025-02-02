@@ -29,20 +29,9 @@
             </div>
           </div>
           @endforeach
-          @foreach($pesan as $data)
-          <div class="card mb-3">
-            <div class="card-body">
-              <h5 class="card-title border-bottom pb-2 mb-2">{{ $data->judul }}</h5>
-              <p class="card-text">{{ $data->isi }}</p>
-              <div class="d-flex justify-content-between">
-                <p class="card-text m-0"><small class="text-muted">{{ date_format($data->created_at, 'h:i') }}</small>
-                </p>
-                <p class="card-text m-0"><small class="text-muted">{{ date_format($data->created_at, 'd-m-Y') }}</small>
-                </p>
-              </div>
-            </div>
-          </div>
-          @endforeach
+        </div>
+        <div class="col-12 d-flex justify-content-center">
+          {{ $pengumuman->links() }}
         </div>
       </div>
     </div>

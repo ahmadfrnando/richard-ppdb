@@ -12,7 +12,7 @@
   <link rel="stylesheet" href="{{asset('/css/components.css')}}">
   <link rel="stylesheet" href="{{asset('/css/dataTables.bootstrap4.min.css')}}">
   <link rel="stylesheet" href="{{asset('/css/bootstrap-datepicker.min.css')}}">
-  <link rel="stylesheet" href="{{asset('/css/admin.css')}}">
+  <!-- <link rel="stylesheet" href="{{asset('/css/admin.css')}}"> -->
   <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
     integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
 </head>
@@ -80,7 +80,7 @@
             <li class="@yield('nav__item-admin-galeri')">
               <a class="nav-link" href="/admin/galeri">
                 <i class="fas fa-images"></i>
-                <span>Geleri</span>
+                <span>Galeri</span>
               </a>
             </li>
           </ul>
