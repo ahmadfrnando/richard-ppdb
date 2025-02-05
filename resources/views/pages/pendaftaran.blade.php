@@ -23,7 +23,7 @@
           </h6>
         </div>
         <div class="mb-3 px-3 px-md-5 py-4 py-md-5 bg-light shadow-sm">
-          <form action="{{ route('pendaftaran.store') }}" method="post">
+          <form action="{{ route('pendaftaran.store') }}" method="post" enctype="multipart/form-data">
             @csrf
             {{-- DATA PRIBADI --}}
             <div class="siswa__section mb-4">
@@ -344,7 +344,7 @@
                 <div class="col-sm-8">
                   <div class="custom-file">
                   <input type="file" class="custom-file-input" id="file_skhu" name="file_skhu" autocomplete="off" required onchange="document.getElementById('file_skhu_label').innerHTML = this.value.split('\\').pop();">
-                  <label class="custom-file-label" for="file_skhu">Pilih File</label>
+                  <label class="custom-file-label" id="file_skhu_label" for="file_skhu">Pilih File</label>
                   </div>
                 </div>
               </div>
@@ -354,7 +354,7 @@
                 <div class="col-sm-8">
                   <div class="custom-file">
                   <input type="file" class="custom-file-input" id="file_id" name="file_id" autocomplete="off" required onchange="document.getElementById('file_id_label').innerHTML = this.value.split('\\').pop();">
-                  <label class="custom-file-label" for="file_id">Pilih File</label>
+                  <label class="custom-file-label" id="file_id_label">Pilih File</label>
                   </div>
                 </div>
               </div>
@@ -364,17 +364,17 @@
                 <div class="col-sm-8">
                   <div class="custom-file">
                   <input type="file" class="custom-file-input" id="file_kk" name="file_kk" autocomplete="off" required onchange="document.getElementById('file_kk_label').innerHTML = this.value.split('\\').pop();">
-                  <label class="custom-file-label" for="file_kk">Pilih File</label>
+                  <label class="custom-file-label" id="file_kk_label">Pilih File</label>
                   </div>
                 </div>
               </div>
               <div class="form-group row mt-20">
-                <label for="file_kk" class="col-sm-4 col-form-label font-weight-normal">Upload Pas Foto<span
+                <label for="file_pas_foto" class="col-sm-4 col-form-label font-weight-normal">Upload Pas Foto<span
                     class="text-danger">*</span></label>
                 <div class="col-sm-8">
                   <div class="custom-file">
-                  <input type="file" class="custom-file-input" id="file_kk" name="file_kk" autocomplete="off" required onchange="document.getElementById('file_kk_label').innerHTML = this.value.split('\\').pop();">
-                  <label class="custom-file-label" for="file_kk">Pilih File</label>
+                  <input type="file" class="custom-file-input" id="file_pas_foto" name="file_pas_foto" autocomplete="off" required onchange="document.getElementById('file_pas_foto_label').innerHTML = this.value.split('\\').pop();">
+                  <label class="custom-file-label" id="file_pas_foto_label">Pilih File</label>
                   </div>
                 </div>
               </div>

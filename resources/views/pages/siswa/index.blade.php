@@ -30,30 +30,6 @@
         <p class="mb-0 text-light">Pastikan anda sudah mengunduh bukti pendaftaran anda.</p>
       </div>
       @endif
-      <div class="row mb-4">
-        <div class="col-12 col-sm-12">
-          <div class="card bg-primary mb-3">
-            <div class="card-body">
-              <h5 class="card-title text-light font-weight-medium">Pengumuman</h5>
-              <p class="card-text text-light">Lihat hasil pengumuman @if($pengumuman->count() > 0)<span class="text-success">(Tersedia)</span>@else<span class="text-danger">(belum ada)</span>@endif</p>
-              <div class="text-right">
-                <a href="/siswa/pengumuman" class="btn btn-light">Buka</a>
-              </div>
-            </div>
-          </div>
-        </div>
-        <!-- <div class="col-12 col-sm-6">
-          <div class="card bg-warning mb-3">
-            <div class="card-body">
-              <h5 class="card-title text-light font-weight-medium">Daftar Ulang</h5>
-              <p class="card-text text-light">Lakukan pendaftaran ulang jika anda dinyatakan lulus oleh admin</p>
-              <div class="text-right">
-                <a href="/siswa/daftar-ulang" class="btn btn-light">Buka</a>
-              </div>
-            </div>
-          </div>
-        </div> -->
-      </div>
       <div class="text-center">
         <a href="{{ route('logout') }}" class="btn btn-danger">Keluar</a>
       </div>

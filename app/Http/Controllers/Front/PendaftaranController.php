@@ -7,6 +7,7 @@ use App\Models\Siswa;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Storage;
 
 class PendaftaranController extends Controller
 {
@@ -54,20 +55,25 @@ class PendaftaranController extends Controller
             'rata_rata_ijazah' => 'required',
         ]);
 
-        $fields = ['file_ijazah', 'file_skhu', 'file_id'];
+        $fields = ['file_ijazah', 'file_skhu', 'file_id', 'file_kk', 'file_pas_foto'];
         foreach ($fields as $field) {
             if ($request->hasFile($field)) {
                 $request->validate([
                     $field => 'mimes:pdf,jpg,jpeg,png|max:2048',
                 ]);
-
+        
                 $file = $request->file($field);
                 $extension = $file->getClientOriginalExtension();
-                $filename = time() . '.' . $extension;
-                $file->storeAs('file', $filename, 'public');
-                $request->merge([$field => $filename]);
+                $filename = time() . '_' . $field . '.' . $extension; // Nama unik berdasarkan field
+                $file->storeAs('public/file', $filename);
+        
+                // Simpan nama file di dalam array untuk dimasukkan ke dalam database
+                $filePaths[$field] = $filename;
+            } else {
+                $filePaths[$field] = null; // Jika tidak ada file yang diupload, tetap isi dengan null
             }
         }
+        
 
         $nomor_pendaftaran = $request->nisn . '-' . rand(1000, 9999);
 
@@ -108,8 +114,11 @@ class PendaftaranController extends Controller
             'pin' => $pin,
             'status' => 1,
             'user_id' => $user->id,
-            'file_ijazah' => $request->file_ijazah,
-            'file_skhu' => $request->file_skhu,
+            'file_ijazah' => $filePaths['file_ijazah']  ?? null,
+            'file_skhu' => $filePaths['file_skhu']  ?? null,
+            'file_id' => $filePaths['file_id']  ?? null,
+            'file_kk' => $filePaths['file_kk']  ?? null,
+            'file_pas_foto' => $filePaths['file_pas_foto']  ?? null
         ]);
 
         session(['id_siswa' => $siswa->id]);
