@@ -35,6 +35,14 @@ class SiswaController extends Controller
         return view('pages/siswa/pengumuman', compact('pengumuman', 'pengumumanCount'));
     }
 
+    public function data()
+    {
+        $user_id = auth()->user()->id;
+        $siswa = Siswa::where('user_id', $user_id)->first();
+        $pengumumanCount = Pengumuman::where('filter_status', $siswa->status)->orWhere('filter_status', 1)->get();
+        return view('pages/siswa/data', compact('siswa', 'pengumumanCount'));
+    }
+
     public function daftar_ulang()
     {
         return view('pages/siswa/daftar-ulang');

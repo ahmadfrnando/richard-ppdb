@@ -11,6 +11,11 @@
           Pengumuman <span class="badge badge-danger font-weight-medium">{{ $pengumumanCount->count() }}</span>
         </a>
       </li>
+      <li class="nav-item @yield('nav__item-siswa-data')">
+        <a class="nav-link p-0 px-2" href="/siswa/data">
+          Data Siswa
+        </a>
+      </li>
       <!-- <li class="nav-item @yield('nav__item-siswa-daftar-ulang')">
         <a class="nav-link p-0 px-2" href="/siswa/daftar-ulang">
           Daftar Ulang

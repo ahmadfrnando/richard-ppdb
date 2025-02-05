@@ -322,6 +322,64 @@
                 </div>
               </div>
             </div>
+
+            <div class="siswa__section mb-4">
+              <div class="d-flex align-items-center pb-3">
+                <span class="bg-primary mb-2 rounded-pill" style="height: 0.4rem; width: 1.6rem;"></span>
+                <h5 class="ml-3">File Unggahan (JPG, JPEG, PNG, PDF Maks. 2MB)</h5>
+              </div>
+              <div class="form-group row">
+                <label for="file_ijazah" class="col-sm-4 col-form-label font-weight-normal">Upload Ijazah<span
+                    class="text-danger">*</span></label>
+                <div class="col-sm-8">
+                  <div class="custom-file">
+                    <input type="file" class="custom-file-input" id="file_ijazah" name="file_ijazah" autocomplete="off" required onchange="document.getElementById('file_ijazah_label').innerHTML = this.value.split('\\').pop();">
+                    <label class="custom-file-label" id="file_ijazah_label" for="file_ijazah">Pilih File</label>
+                  </div>
+                </div>
+              </div>
+              <div class="form-group row mt-20">
+                <label for="file_skhu" class="col-sm-4 col-form-label font-weight-normal">Upload SKHU<span
+                    class="text-danger">*</span></label>
+                <div class="col-sm-8">
+                  <div class="custom-file">
+                  <input type="file" class="custom-file-input" id="file_skhu" name="file_skhu" autocomplete="off" required onchange="document.getElementById('file_skhu_label').innerHTML = this.value.split('\\').pop();">
+                  <label class="custom-file-label" for="file_skhu">Pilih File</label>
+                  </div>
+                </div>
+              </div>
+              <div class="form-group row mt-20">
+                <label for="file_id" class="col-sm-4 col-form-label font-weight-normal">Upload KTP/Kartu Pelajar<span
+                    class="text-danger">*</span></label>
+                <div class="col-sm-8">
+                  <div class="custom-file">
+                  <input type="file" class="custom-file-input" id="file_id" name="file_id" autocomplete="off" required onchange="document.getElementById('file_id_label').innerHTML = this.value.split('\\').pop();">
+                  <label class="custom-file-label" for="file_id">Pilih File</label>
+                  </div>
+                </div>
+              </div>
+              <div class="form-group row mt-20">
+                <label for="file_kk" class="col-sm-4 col-form-label font-weight-normal">Upload Kartu Keluarga<span
+                    class="text-danger">*</span></label>
+                <div class="col-sm-8">
+                  <div class="custom-file">
+                  <input type="file" class="custom-file-input" id="file_kk" name="file_kk" autocomplete="off" required onchange="document.getElementById('file_kk_label').innerHTML = this.value.split('\\').pop();">
+                  <label class="custom-file-label" for="file_kk">Pilih File</label>
+                  </div>
+                </div>
+              </div>
+              <div class="form-group row mt-20">
+                <label for="file_kk" class="col-sm-4 col-form-label font-weight-normal">Upload Pas Foto<span
+                    class="text-danger">*</span></label>
+                <div class="col-sm-8">
+                  <div class="custom-file">
+                  <input type="file" class="custom-file-input" id="file_kk" name="file_kk" autocomplete="off" required onchange="document.getElementById('file_kk_label').innerHTML = this.value.split('\\').pop();">
+                  <label class="custom-file-label" for="file_kk">Pilih File</label>
+                  </div>
+                </div>
+              </div>
+            </div>
+
             {{-- SECTION KIRIM --}}
             <div class="kirim__section">
               <div class="mb-4">

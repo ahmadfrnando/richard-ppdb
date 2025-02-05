@@ -53,6 +53,7 @@ Route::get('/respon', [Front\KonfirmasiController::class, 'respon'])->name('resp
 
 Route::get('/masuk', [Front\MasukController::class, 'index'])->name('masuk');
 
+
 // AUTH
 
 Route::get('/login', [AuthController::class, 'index']);
@@ -63,11 +64,14 @@ Route::group(['middleware' => ['auth', 'checkRole:admin,siswa']], function () {
 });
 
 // SISWA
+Route::get('/admin/login', [Front\MasukController::class, 'indexAdmin'])->name('admin.login');
 
 Route::group(['middleware' => ['auth', 'checkRole:siswa']], function () {
     Route::get('/siswa', [Front\SiswaController::class, 'index'])->name('siswa');
 
     Route::get('/siswa/pengumuman', [Front\SiswaController::class, 'pengumuman'])->name('siswa.pengumuman');
+
+    Route::get('/siswa/data', [Front\SiswaController::class, 'data'])->name('siswa.data');
 
     Route::get('/siswa/daftar-ulang', [Front\SiswaController::class, 'daftar_ulang'])->name('siswa.daftar_ulang');
 });

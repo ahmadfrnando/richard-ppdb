@@ -25,7 +25,7 @@
             </div>
             <div class="">
               <div class="mb-4 d-flex justify-content-center">
-                <img src="{{ asset('images/logo-sekolah.png') }}" height="180" alt="Logo {{ $dataSekolah->nama_sekolah }}">
+                <img src="{{ asset('images/logo.png') }}" height="180" alt="Logo {{ $dataSekolah->nama_sekolah }}">
               </div>
               <div class="mb-4">
                 <h6># Visi</h6>

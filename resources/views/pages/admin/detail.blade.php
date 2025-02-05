@@ -47,7 +47,7 @@
           <table class="table table-striped">
             <tr>
               <th>Nomor Pendaftaran</th>
-              <td>{{ $siswa->nomor_pendaftar }}</td>
+              <td>{{ $siswa->nomor_pendaftaran }}</td>
             </tr>
             <tr>
               <th>Nama</th>
@@ -139,7 +139,15 @@
             </tr>
             <tr>
               <th>Status</th>
-              <td>{{ $siswa->status }}</td>
+              <td>
+                @if ($siswa->status == 1)
+                  Belum diverifikasi
+                @elseif ($siswa->status == 2)
+                  Lulus
+                @elseif ($siswa->status == 3)
+                  Tidak lulus
+                @endif
+              </td>
             </tr>
           </table>
           <div class="text-center mt-4">

@@ -54,6 +54,21 @@ class PendaftaranController extends Controller
             'rata_rata_ijazah' => 'required',
         ]);
 
+        $fields = ['file_ijazah', 'file_skhu', 'file_id'];
+        foreach ($fields as $field) {
+            if ($request->hasFile($field)) {
+                $request->validate([
+                    $field => 'mimes:pdf,jpg,jpeg,png|max:2048',
+                ]);
+
+                $file = $request->file($field);
+                $extension = $file->getClientOriginalExtension();
+                $filename = time() . '.' . $extension;
+                $file->storeAs('file', $filename, 'public');
+                $request->merge([$field => $filename]);
+            }
+        }
+
         $nomor_pendaftaran = $request->nisn . '-' . rand(1000, 9999);
 
         $pin = rand(1000, 9999);
@@ -93,6 +108,8 @@ class PendaftaranController extends Controller
             'pin' => $pin,
             'status' => 1,
             'user_id' => $user->id,
+            'file_ijazah' => $request->file_ijazah,
+            'file_skhu' => $request->file_skhu,
         ]);
 
         session(['id_siswa' => $siswa->id]);
