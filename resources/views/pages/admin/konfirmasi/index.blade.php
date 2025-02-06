@@ -65,8 +65,20 @@
             <td class="d-flex flex-row" style="gap: 1rem">
               <a href="{{ route('admin.konfirmasi.detail', ['id' => $data->id]) }}"
                 class="btn btn-info mr-2 mb-2">Detail</a>
-            </td>
-            <td>
+                <div class="dropdown d-inline mr-2">
+                  <button class="btn btn-primary dropdown-toggle mb-2" type="button" id="dropdownMenuButton"
+                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Lainya
+                  </button>
+                  <div class="dropdown-menu mr-2" x-placement="bottom-start"
+                    style="position: absolute; transform: translate3d(0px, 28px, 0px); top: 0px; left: 0px; will-change: transform;">
+                    <a href="{{ route('admin.siswa.ubah', ['id' => $data->id]) }}"
+                      class="dropdown-item text-warning font-weight-bolder">Ubah</a>
+                    <a href="#modal__delete" data-toggle="modal"
+                      onclick="$('#modal__delete #form__delete').attr('action', '/admin/siswa/{{ $data->id }}/destroy')"
+                      class="dropdown-item text-danger font-weight-bolder">Hapus</a>
+                  </div>
+                </div>
             </td>
           </tr>
           <?php $count++ ?>

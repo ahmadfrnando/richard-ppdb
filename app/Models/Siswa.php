@@ -21,4 +21,12 @@ class Siswa extends Model
     {
         return $this->hasMany(Konfirmasi::class);
     }
+
+    public function setTahap($id, $tahap)
+    {
+        $tahapSiswa = new TahapSiswa();
+        $tahapSiswa->id_siswa = $id;
+        $tahapSiswa->tahap = $tahap;
+        $tahapSiswa->save();
+    }
 }

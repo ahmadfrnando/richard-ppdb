@@ -30,7 +30,7 @@ class PengumumanController extends Controller
         Pengumuman::create([
             'judul' => $request->judul,
             'deskripsi' => $request->deskripsi,
-            'filter_status' => $request->status
+            'id_status' => $request->status
         ]);
 
         return redirect()->route('admin.pengumuman')->with('success', 'Pengumuman berhasil ditambahkan');
@@ -41,6 +41,7 @@ class PengumumanController extends Controller
         $validator = Validator::make($request->all(), [
             'judul' => 'required',
             'deskripsi' => 'required',
+            'status' => 'required',
         ]);
 
         if ($validator->fails()) {
@@ -52,6 +53,7 @@ class PengumumanController extends Controller
         $pengumuman->update([
             'judul' => $request->judul,
             'deskripsi' => $request->deskripsi,
+            'id_status' => $request->status
         ]);
 
         return redirect()->route('admin.pengumuman')->with('success', 'Pengumuman berhasil diperbarui');

@@ -27,9 +27,9 @@
                     <td>
                       @if ($siswa->status == 1)
                       <span class="badge badge-warning">Belum diverifikasi</span>
-                      @elseif ($siswa->status == 2)
+                      @elseif ($siswa->status == 100)
                       <span class="badge badge-success">Lulus</span>
-                      @elseif ($siswa->status == 3)
+                      @elseif ($siswa->status == 101)
                       <span class="badge badge-danger">Tidak lulus</span>
                       @endif
                     </td>

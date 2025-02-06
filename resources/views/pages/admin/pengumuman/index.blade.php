@@ -38,6 +38,7 @@
             <th scope="col">Judul</th>
             <th scope="col">Deskripsi</th>
             <th scope="col">Tanggal</th>
+            <th scope="col">Dikirim Ke</th>
             <th scope="col">Action</th>
           </tr>
         </thead>
@@ -49,6 +50,21 @@
             <td>{{ substr( $data->judul, 0, 20) }} ...</td>
             <td>{{ substr( $data->deskripsi, 0, 40) }} ...</td>
             <td>{{ date_format($data->created_at, 'd-m-Y | h:i') }}</td>
+            <td>
+                @switch($data->id_status)
+                    @case(1)
+                        <span class="badge badge-secondary">Umum</span>
+                        @break
+                    @case(100)
+                        <span class="badge badge-success">Siswa Lulus</span>
+                        @break
+                    @case(101)
+                        <span class="badge badge-danger">Siswa Tidak Lulus</span>
+                        @break
+                    @default
+                        <span class="badge badge-light">-</span>
+                @endswitch
+            </td>
             <td>
               <a href="#modal__detail" data-toggle="modal"
                 onclick="$('#modal__detail #judul').text('{{ $data->judul }}');$('#modal__detail #deskripsi').text('{{ $data->deskripsi }}');$('#modal__detail #tanggal').text('{{ $data->created_at }}');"
@@ -121,8 +137,8 @@
             <select class="form-control @error('status') is-invalid @enderror" id="status" name="status"
               required>
               <option value="1">Semua Siswa</option>
-              <option value="2">Siswa lulus</option>
-              <option value="3">Siswa tidak lulus</option>
+              <option value="100">Siswa lulus</option>
+              <option value="103">Siswa tidak lulus</option>
             </select>
             @error('status')
             <div class="invalid-feedback">

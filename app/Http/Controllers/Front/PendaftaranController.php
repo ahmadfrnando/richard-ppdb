@@ -121,6 +121,8 @@ class PendaftaranController extends Controller
             'file_pas_foto' => $filePaths['file_pas_foto']  ?? null
         ]);
 
+        $siswa->setTahap($siswa->id, 1);
+
         session(['id_siswa' => $siswa->id]);
 
         return redirect()->route('detail')->with('success', 'success');

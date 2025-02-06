@@ -6,14 +6,15 @@
     "license": "MIT",
     "require": {
         "php": "^7.3|^8.0|^8.3",
+        "barryvdh/laravel-dompdf": "^2.2",
         "doctrine/dbal": "^3.9",
         "fruitcake/laravel-cors": "^2.0",
         "guzzlehttp/guzzle": "^7.0.1",
-        "barryvdh/laravel-dompdf": "^2.2",
         "laravel/framework": "^8.54",
         "laravel/sanctum": "^2.11",
         "laravel/tinker": "^2.5",
-        "maatwebsite/excel": "^3.1"
+        "maatwebsite/excel": "^3.1",
+        "parsedown/laravel": "^1.2"
     },
     "require-dev": {
         "facade/ignition": "^2.5",

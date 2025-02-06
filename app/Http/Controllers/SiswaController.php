@@ -9,12 +9,13 @@ use Maatwebsite\Excel\Facades\Excel;
 use App\Exports\SiswaExport;
 use App\Models\Pengumuman;
 use App\Models\Pesan;
+use Parsedown;
 
 class SiswaController extends Controller
 {
     public function index(Request $request)
     {
-        $siswa = Siswa::paginate(10);
+        $siswa = Siswa::orderBy('id', 'DESC')->where('status', 100)->orWhere('status', 101)->get();
         return view('/pages/admin/siswa/index', compact('siswa'));
     }
 
@@ -102,31 +103,22 @@ class SiswaController extends Controller
     {
         $siswa = Siswa::findOrFail($id);
         $pesan = new Pesan();
-        $pengumuman = new Pengumuman();
         $status = $request->input('status');
 
         if ($status == 2) {
             $siswa->update(['status' => 2]);
             $pesan->judul = 'Selamat';
             $pesan->isi = "Selamat {$siswa->nama} dengan NISN {$siswa->nisn}, data anda telah diverifikasi oleh admin, silahkan tunggu informasi selanjutnya pada menu pengumuman.";
-        } elseif ($status == 3) {
-            $siswa->update(['status' => 3]);
-            $pesan->judul = 'Maaf';
-            $pesan->isi = "Selamat {$siswa->nama} dengan NISN {$siswa->nisn}, data anda telah diverifikasi oleh admin, silahkan tunggu informasi selanjutnya pada menu pengumuman.";
+            $pesan->id_siswa = $id;
+            $pesan->save();
+            $siswa->setTahap($id, 2);
         } elseif ($status == 100) {
             $siswa->update(['status' => 100]);
-            $pengumuman->judul = 'Maaf';
-            $pengumuman->deskripsi = "Selamat {$siswa->nama} dengan NISN {$siswa->nisn}, data anda telah diverifikasi oleh admin, silahkan tunggu informasi selanjutnya pada menu pengumuman.";
-            $pengumuman->id_status = 100;
+            $siswa->setTahap($id, 3);
         } elseif ($status == 101) {
             $siswa->update(['status' => 101]);
-            $pengumuman->judul = 'Maaf';
-            $pengumuman->deskripsi = "Selamat {$siswa->nama} dengan NISN {$siswa->nisn}, data anda telah diverifikasi oleh admin, silahkan tunggu informasi selanjutnya pada menu pengumuman.";
-            $pengumuman->id_status = 101;
+            $siswa->setTahap($id, 3);
         }
-
-        $pesan->id_siswa = $id;
-        $pesan->save();
 
         return redirect()->route('admin.konfirmasi')->with('success', 'Status Pendaftar berhasil diperbarui');
     }
@@ -241,5 +233,45 @@ class SiswaController extends Controller
         } catch (\Exception $e) {
             return redirect()->route('admin.konfirmasi.detail', ['id' => $id])->with('error', 'Berkas tidak ditemukan');
         }
+    }
+
+    public function kirimPengumuman()
+    {
+        $pengumumanData = [
+            [
+                'judul' => 'Lulus!',
+                'deskripsi' => "
+                Selamat, data anda telah dinyatakan lulus, berikut adalah 
+                persyaratan untuk daftar ulang.
+                1.⁠ ⁠Bukti Pendaftaran Online
+                2.⁠ ⁠Fotocopy KTP/Kartu Pelajar 2 Lembar
+                3.⁠ ⁠Fotocopy Kartu Keluarga (KK) 2 Lembar
+                4.⁠ ⁠Fotocopy SKHU 2 Lembar
+                5.⁠ ⁠Fotocopy Ijazah 2 Lembar (Jika ada) 
+                6.⁠ ⁠Passfoto menggunakan Baju SMA, 
+                    latar merah dengan ukuran 3x4 2 Lembar dan 4x6 2 Lembar",
+                'id_status' => 100,
+            ],
+            [
+                'judul' => 'Tidak Lulus!',
+                'deskripsi' => "
+                Maaf, admin sudah memeriksa data dan berkas anda. 
+                Kami berharap anda dapat lebih baik lagi di masa yang akan datang, 
+                tetap semangat dan pantang menyerah.",
+                'id_status' => 101,
+            ]
+        ];
+
+        foreach ($pengumumanData as $data) {
+            $pengumuman = new Pengumuman();
+            $pengumuman->judul = $data['judul'];
+            $pengumuman->deskripsi = Parsedown::instance()->text($data['deskripsi']);
+            $pengumuman->id_status = $data['id_status'];
+            $pengumuman->created_at = now();
+            $pengumuman->updated_at = now();
+            $pengumuman->save();
+        }
+
+        return redirect()->route('admin.siswa')->with('success', 'Pengumuman berhasil dikirim');
     }
 }

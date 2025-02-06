@@ -16,6 +16,16 @@
           Data Siswa
         </a>
       </li>
+      <li class="nav-item @yield('nav__item-siswa-data')">
+        <a class="nav-link p-0 px-2" href="/siswa/berkas">
+          Berkas Siswa
+        </a>
+      </li>
+      <li class="nav-item @yield('nav__item-siswa-data')">
+        <a href="{{ route('logout') }}" class="nav-link p-0 px-2">
+          Keluar
+        </a>
+      </li>
       <!-- <li class="nav-item @yield('nav__item-siswa-daftar-ulang')">
         <a class="nav-link p-0 px-2" href="/siswa/daftar-ulang">
           Daftar Ulang

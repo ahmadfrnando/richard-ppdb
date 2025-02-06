@@ -17,6 +17,9 @@
         <a href="/admin/siswa/" class="btn btn-info">
           <i class="fas fa-sync-alt text-white"></i>
         </a>
+        <a href="{{ route('admin.siswa.kirim-pengumuman') }}" class="btn btn-success ml-2">
+          Kirim Pengumuman
+        </a>
       </div>
     </div>
   </div>
@@ -29,7 +32,6 @@
             <th scope="col">NISN</th>
             <th scope="col">Nama</th>
             <th scope="col">Status</th>
-            <th scope="col">Action</th>
           </tr>
         </thead>
         <tbody>
@@ -39,51 +41,17 @@
             <td>{{ $count }}</td>
             <td>{{ $data->nisn }}</td>
             <td>{{ $data->nama }}</td>
-            <!-- <td><span class="badge badge-{{ $data->status == 1 ? 'danger' : 'success' }}">{{ $data->status == 1 ? 'Belum dikonfirmasi' : 'Sudah dikonfirmasi' }}</span></td> -->
-            <td><span class="badge badge-{{ $data->status == 1 ? 'warning' : ($data->status == 2 ? 'success' : 'danger') }}">{{ $data->status == 1 ? 'Belum dikonfirmasi' : ($data->status == 2 ? 'Sudah dikonfirmasi' : 'Nilai tidak mencukupi') }}</span></td>
-            <!-- <td>
-              @if($data->status)
-              <a href="#modal__status" data-toggle="modal"
-                onclick="$('#modal__status #form__status').attr('action', '/admin/siswa/{{ $data->id }}/status')"
-                class="badge badge-success mr-2 mb-2">
-                <i class="fas fa-circle text-white mr-2" style="font-size: 0.6rem;"></i>
-                <span>Aktif</span>
-              </a>
-              @else
-              <a href="#modal__status" data-toggle="modal"
-                onclick="$('#modal__status #form__status').attr('action', '/admin/siswa/{{ $data->id }}/status')"
-                class="badge badge-danger mr-2 mb-2">
-                <i class="fas fa-circle text-white mr-2" style="font-size: 0.6rem;"></i>
-                <span>Belum verifikasi</span>
-              </a>
-              @endif
-            </td> -->
-            <td>
-              <a href="/detail/bukti-pendaftaran/{{ $data->id }}" target="_blank"
-                class="btn btn-warning mr-2 mb-2">Unduh</a>
-              <div class="dropdown d-inline mr-2">
-                <button class="btn btn-primary dropdown-toggle mb-2" type="button" id="dropdownMenuButton"
-                  data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                  Lainya
-                </button>
-                <div class="dropdown-menu mr-2" x-placement="bottom-start"
-                  style="position: absolute; transform: translate3d(0px, 28px, 0px); top: 0px; left: 0px; will-change: transform;">
-                  <a href="{{ route('admin.siswa.ubah', ['id' => $data->id]) }}"
-                    class="dropdown-item text-warning font-weight-bolder">Ubah</a>
-                  <a href="#modal__delete" data-toggle="modal"
-                    onclick="$('#modal__delete #form__delete').attr('action', '/admin/siswa/{{ $data->id }}/destroy')"
-                    class="dropdown-item text-danger font-weight-bolder">Hapus</a>
-                </div>
-              </div>
-            </td>
+            <td><span class="badge badge-{{ $data->status == 100 ? 'success' : ($data->status == 101 ? 'success' : 'danger') }}">{{ $data->status == 100 ? 'Lulus' : ($data->status == 101 ? 'Tidak Lulus' : '-') }}</span></td>
           </tr>
           <?php $count++ ?>
           @endforeach
         </tbody>
       </table>
+
     </div>
   </div>
 </div>
+
 
 @endsection
 
@@ -108,6 +76,7 @@
     </div>
   </div>
 </div>
+
 
 <!-- Modal Status -->
 <div class="modal fade" id="modal__status" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">

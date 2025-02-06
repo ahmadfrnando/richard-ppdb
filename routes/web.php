@@ -73,6 +73,8 @@ Route::group(['middleware' => ['auth', 'checkRole:siswa']], function () {
 
     Route::get('/siswa/data', [Front\SiswaController::class, 'data'])->name('siswa.data');
 
+    Route::get('/siswa/berkas', [Front\SiswaController::class, 'berkas'])->name('siswa.berkas');
+
     Route::get('/siswa/daftar-ulang', [Front\SiswaController::class, 'daftar_ulang'])->name('siswa.daftar_ulang');
 });
 
@@ -96,7 +98,7 @@ Route::group(['middleware' => ['auth', 'checkRole:admin']], function () {
 
     Route::post('/admin/siswa/{id}/status', [SiswaController::class, 'status'])->name('admin.siswa.status');
 
-    Route::get('/admin/siswa/{id}/ubah', [SiswaController::class, 'ubah'])->name('admin.siswa.ubah');
+    Route::get('/admin/siswa/{id}/ubah', [KonfirmasiController::class, 'ubah'])->name('admin.siswa.ubah');
 
     Route::post('/admin/siswa/{id}/update', [SiswaController::class, 'update'])->name('admin.siswa.update');
 
@@ -105,6 +107,8 @@ Route::group(['middleware' => ['auth', 'checkRole:admin']], function () {
     Route::get('/admin/siswa/{id}/berkas/{berkas}', [SiswaController::class, 'berkasDownload'])->name('admin.berkas.download');
 
     Route::get('/admin/siswa/export', [SiswaController::class, 'export'])->name('admin.siswa.export');
+
+    Route::get('/admin/siswa/kirim/pengumuman', [SiswaController::class, 'kirimPengumuman'])->name('admin.siswa.kirim-pengumuman');
 
     Route::get('/admin/konfirmasi', [KonfirmasiController::class, 'index'])->name('admin.konfirmasi');
 

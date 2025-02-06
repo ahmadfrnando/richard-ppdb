@@ -32,4 +32,11 @@ class KonfirmasiController extends Controller
 
         return redirect()->route('admin.konfirmasi')->with('success', 'Status Pendaftar berhasil diaktifkan');
     }
+
+    public function ubah($id)
+    {
+        $siswa = Siswa::find($id);
+
+        return view('/pages/admin/konfirmasi/ubah', compact('siswa'));
+    }
 }
