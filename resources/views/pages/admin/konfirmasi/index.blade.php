@@ -48,16 +48,25 @@
             <td>{{ $data->nama }}</td>
             <td>{{ $data->nomor_hp }}</td>
             <td>
-              <a href="#modal__status" data-toggle="modal"
-                onclick="$('#modal__status #form__status')"
-                class="badge badge-danger mr-2 mb-2">
+              @if($data->status == 1)
+              <form action="{{ route('admin.siswa.status', ['id' => $data->id]) }}" method="post">
+                @csrf
+                <button type="submit" value="2" name="status" class="badge badge-danger mr-2 mb-2">
+                  <i class="fas fa-circle text-white mr-2" style="font-size: 0.6rem;"></i>
+                  <span>Belum diverifikasi</span></button>
+              </form>
+              @else
+              <div class="badge badge-warning mr-2 mb-2">
                 <i class="fas fa-circle text-white mr-2" style="font-size: 0.6rem;"></i>
-                <span>Belum dikonfirmasi</span>
-              </a>
+                <span>Sudah diverifikasi</span>
+              </div>
+              @endif
             </td>
-            <td>
+            <td class="d-flex flex-row" style="gap: 1rem">
               <a href="{{ route('admin.konfirmasi.detail', ['id' => $data->id]) }}"
                 class="btn btn-info mr-2 mb-2">Detail</a>
+            </td>
+            <td>
             </td>
           </tr>
           <?php $count++ ?>
@@ -68,7 +77,7 @@
                 <form id="form__status" action="{{ route('admin.siswa.status', ['id' => $data->id]) }}" method="post">
                   @csrf
                   <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">Yakin mengubah status pendaftar ?</h5>
+                    <h5 class="modal-title" id="exampleModalLabel">Apakah anda yakin ingin memverifikasi siswa ini?</h5>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                       <span aria-hidden="true">&times;</span>
                     </button>

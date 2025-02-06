@@ -74,7 +74,7 @@
             <li class="@yield('nav__item-admin-konfirmasi')">
               <a class="nav-link" href="/admin/konfirmasi">
                 <i class="fas fa-key"></i>
-                <span>Konfirmasi</span>
+                <span>Verifikasi Data</span>
               </a>
             </li>
             <li class="@yield('nav__item-admin-galeri')">

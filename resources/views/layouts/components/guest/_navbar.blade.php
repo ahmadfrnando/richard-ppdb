@@ -52,7 +52,7 @@ $menu = [
       @endforeach
     </ul>
     <div class="d-none align-items-center d-md-flex" style="gap: 1.5rem;">
-      <a href="/pendaftaran" class="text-light font-weight-normal pl-2">
+      <a href="/persyaratan-pendaftaran" class="text-light font-weight-normal pl-2">
         <i class="fas fa-pen mr-1 opacity-50 text-white"
           style="font-size: 0.74rem;"></i>
         Pendaftaran

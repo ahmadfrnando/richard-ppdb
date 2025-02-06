@@ -10,7 +10,7 @@ class KonfirmasiController extends Controller
 {
     public function index()
     {
-        $konfirmasi =  Siswa::where('status', 1)->orderBy('id', 'DESC')->get();
+        $konfirmasi =  Siswa::where('status', 1)->orWhere('status', 2)->orderBy('id', 'DESC')->get();
 
         return view('pages/admin/konfirmasi/index', compact('konfirmasi'));
     }

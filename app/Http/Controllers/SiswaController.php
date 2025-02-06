@@ -7,6 +7,7 @@ use App\Models\User;
 use Illuminate\Http\Request;
 use Maatwebsite\Excel\Facades\Excel;
 use App\Exports\SiswaExport;
+use App\Models\Pengumuman;
 use App\Models\Pesan;
 
 class SiswaController extends Controller
@@ -21,9 +22,9 @@ class SiswaController extends Controller
     {
         return view('/pages/admin/siswa/buat');
     }
-    
+
     public function store(Request $request)
-    {   
+    {
         date_default_timezone_set("Asia/Jakarta");
 
         $request->validate([
@@ -84,7 +85,7 @@ class SiswaController extends Controller
             'alamat_orang_tua' => $request->alamat_orang_tua,
             'nilai_skhu' => $request->nilai_skhu,
             'rata_rata_skhu' => $request->rata_rata_skhu,
-            'nomor_ijazah'=> $request->nomor_ijazah,
+            'nomor_ijazah' => $request->nomor_ijazah,
             'nilai_ijazah' => $request->nilai_ijazah,
             'rata_rata_ijazah' => $request->rata_rata_ijazah,
             'pin' => $pin,
@@ -101,6 +102,7 @@ class SiswaController extends Controller
     {
         $siswa = Siswa::findOrFail($id);
         $pesan = new Pesan();
+        $pengumuman = new Pengumuman();
         $status = $request->input('status');
 
         if ($status == 2) {
@@ -110,13 +112,23 @@ class SiswaController extends Controller
         } elseif ($status == 3) {
             $siswa->update(['status' => 3]);
             $pesan->judul = 'Maaf';
-            $pesan->isi = "Maaf {$siswa->nama} dengan NISN {$siswa->nisn}, data anda telah diverifikasi, namun Nilai anda tidak mencukupi. Jika ada kekeliruan dalam pengisian data, silahkan bawa berkas asli ke sekolah untuk pengecekan ulang oleh admin. Terima kasih.";
+            $pesan->isi = "Selamat {$siswa->nama} dengan NISN {$siswa->nisn}, data anda telah diverifikasi oleh admin, silahkan tunggu informasi selanjutnya pada menu pengumuman.";
+        } elseif ($status == 100) {
+            $siswa->update(['status' => 100]);
+            $pengumuman->judul = 'Maaf';
+            $pengumuman->deskripsi = "Selamat {$siswa->nama} dengan NISN {$siswa->nisn}, data anda telah diverifikasi oleh admin, silahkan tunggu informasi selanjutnya pada menu pengumuman.";
+            $pengumuman->id_status = 100;
+        } elseif ($status == 101) {
+            $siswa->update(['status' => 101]);
+            $pengumuman->judul = 'Maaf';
+            $pengumuman->deskripsi = "Selamat {$siswa->nama} dengan NISN {$siswa->nisn}, data anda telah diverifikasi oleh admin, silahkan tunggu informasi selanjutnya pada menu pengumuman.";
+            $pengumuman->id_status = 101;
         }
 
         $pesan->id_siswa = $id;
         $pesan->save();
 
-        return redirect()->route('admin.siswa')->with('success', 'Status Pendaftar berhasil diperbarui');
+        return redirect()->route('admin.konfirmasi')->with('success', 'Status Pendaftar berhasil diperbarui');
     }
 
     public function ubah($id)
@@ -206,5 +218,28 @@ class SiswaController extends Controller
     public function export()
     {
         return Excel::download(new SiswaExport(), 'ppdb_siswa_' . date('Y-m-d h:i') . '.xlsx');
+    }
+
+    public function berkasDownload($id, $berkas)
+    {
+        try {
+            $siswa = Siswa::find($id);
+            $file = '';
+            if ($berkas == 'id') {
+                $file = $siswa->file_id;
+            } elseif ($berkas == 'kk') {
+                $file = $siswa->file_kk;
+            } elseif ($berkas == 'ijazah') {
+                $file = $siswa->file_ijazah;
+            } elseif ($berkas == 'skhu') {
+                $file = $siswa->file_skhu;
+            } elseif ($berkas == 'pas_foto') {
+                $file = $siswa->file_pas_foto;
+            }
+
+            return response()->download(storage_path('app/public/file/' . $file));
+        } catch (\Exception $e) {
+            return redirect()->route('admin.konfirmasi.detail', ['id' => $id])->with('error', 'Berkas tidak ditemukan');
+        }
     }
 }

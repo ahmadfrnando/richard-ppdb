@@ -102,6 +102,8 @@ Route::group(['middleware' => ['auth', 'checkRole:admin']], function () {
 
     Route::get('/admin/siswa/{id}/destroy', [SiswaController::class, 'destroy'])->name('admin.siswa.destroy');
 
+    Route::get('/admin/siswa/{id}/berkas/{berkas}', [SiswaController::class, 'berkasDownload'])->name('admin.berkas.download');
+
     Route::get('/admin/siswa/export', [SiswaController::class, 'export'])->name('admin.siswa.export');
 
     Route::get('/admin/konfirmasi', [KonfirmasiController::class, 'index'])->name('admin.konfirmasi');
