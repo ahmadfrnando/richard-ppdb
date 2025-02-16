@@ -19,7 +19,7 @@
   <div class="col-lg-12 col-sm-6 col-12 mb-4">
     <div class="d-flex align-items-center mb-3">
       <span class="bg-primary mb-2 rounded-pill" style="height: 0.4rem; width: 1.6rem;"></span>
-      <h5 class="ml-3">Alur PPDB Online:</h5>
+      <h5 class="ml-3">Alur Pendaftaran:</h5>
     </div>
     <div class="">
       <div class="d-flex mb-3">
