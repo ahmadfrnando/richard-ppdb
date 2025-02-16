@@ -30,14 +30,11 @@
                 <h6># Calon siswa berpakaian seragam sekolah SMP, didampingi orang tua hadir kesekolah mendaftarkan
                   diri dengan membawa berkas persyaratan :</h6>
                 <p class="mb-0">1. Bukti Pendaftaran Online</p>
-                <p class="mb-0">1. Fotokopi Kartu Keluarga (KK)</p>
-                <p class="mb-0">1. Fotokopi SKHU</p>
-                <p class="mb-0">2. Fotokopi Ijazah</p>
-                <p class="mb-0 ml-3">a. Surat keterangan dari Kepala Sekolah bila rangking kelas 1-3
-                </p>
-                <p class="mb-0 ml-3">b. Foto copy piagam prestasi akademik/non akademik dan
-                  menununjukkan
-                  aslinya.</p>
+                <p class="mb-0">2. Fotocopy KTP/Kartu Pelajar (2 Lembar) </p>
+                <p class="mb-0">3. Fotocopy Kartu Keluarga (1 Lembar)</p>
+                <p class="mb-0">4. Fotocopy SKHU (2 Lembar)</p>
+                <p class="mb-0">5. Fotocopy Ijazah (2 Lembar)</p>
+                <p class="mb-0">6. Pass Foto Menggunakan Baju SMA dengan menggunakan latar merah dengan ukuran 3x4 = 2 Lembar dan 4x6 = 2 Lembar</p>
               </div>
             </div>
           </div>
